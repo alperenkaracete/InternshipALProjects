@@ -13,21 +13,25 @@ page 50155 "Seminar Setup"
         {
             group(GroupName)
             {
-                field("Seminar Nos."; "Seminar Nos.")
+                Caption = 'GroupName';
+                field("Seminar Nos."; Rec."Seminar Nos.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Nos.';
 
                 }
-                field("Seminar Registration Nos."; "Seminar Registration Nos.")
+                field("Seminar Registration Nos."; Rec."Seminar Registration Nos.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Registration Nos.';
 
 
                 }
-                field("Posted Seminar Registration Nos."; "Posted Seminar Reg. Nos.")
+                field("Posted Seminar Registration Nos."; Rec."Posted Seminar Reg. No.")
                 {
                     ApplicationArea = All;
                     Editable = true;
+                    Caption = 'Posted Seminar Reg. Nos.';
 
 
                 }
@@ -42,6 +46,7 @@ page 50155 "Seminar Setup"
             action(ActionName)
             {
                 ApplicationArea = All;
+                Caption = 'ActionName';
 
                 trigger OnAction()
                 begin
@@ -55,8 +60,8 @@ page 50155 "Seminar Setup"
     var
         myInt: Integer;
     begin
-        IF NOT FINDFIRST THEN
-            INSERT;
+        IF NOT Rec.FINDFIRST THEN
+            Rec.INSERT;
     end;
 
     var

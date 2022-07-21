@@ -5,6 +5,7 @@ page 50157 "Seminar List"
     UsageCategory = Lists;
     SourceTable = Seminar;
     CardPageId = "Seminar Card";
+    Caption = 'Seminar List';
 
     layout
     {
@@ -12,38 +13,46 @@ page 50157 "Seminar List"
         {
             repeater(GroupName)
             {
-                field("No."; "No.")
+                Caption = 'GroupName';
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'No.';
 
 
                 }
-                field("Name"; "Name")
+                field("Name"; Rec."Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Name';
 
                 }
-                field("Seminar Duration"; "Seminar Duration")
+                field("Seminar Duration"; Rec."Seminar Duration")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Duration';
 
                 }
-                field("Seminar Price"; "Seminar Price")
+                field("Seminar Price"; Rec."Seminar Price")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Price';
 
                 }
-                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
+                    Caption = 'Gen. Prod. Posting Group';
 
                 }
-                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
+                field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
                 {
                     ApplicationArea = All;
+                    Caption = 'VAT Prod. Posting Group';
 
                 }
             }
+
         }
     }
 
@@ -57,6 +66,7 @@ page 50157 "Seminar List"
                 Image = Comment;
                 RunObject = page "Comment Sheet";
                 RunPageLink = "Table Name" = const(Seminar), "No." = field("No.");
+                Caption = 'Show Comment Sheet Page';
 
                 trigger OnAction()
                 begin

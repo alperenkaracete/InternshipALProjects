@@ -5,16 +5,18 @@ pageextension 50152 "ResourceList" extends "Resource List"
         addafter(Type)
         {
 
-            field("Internal/External"; "Internal/External")
+            field("Internal/External"; Rec."Internal/External")
             {
 
                 ApplicationArea = All;
+                Caption = 'Internal-External Operations';
             }
-            field("Maximum Participants"; "Maximum Participants")
+            field("Maximum Participants"; Rec."Maximum Participants")
             {
 
                 ApplicationArea = All;
                 Visible = showMaxParticipants;
+                Caption = 'Maximum Participants';
             }
 
         }
@@ -28,7 +30,6 @@ pageextension 50152 "ResourceList" extends "Resource List"
 
     actions
     {
-        // Add changes to page actions here
     }
 
     trigger OnOpenPage()
@@ -36,18 +37,18 @@ pageextension 50152 "ResourceList" extends "Resource List"
 
     begin
         //CSD1.00>
-        FILTERGROUP(3);
-        ShowType := GETFILTER(Type) = '';
-        ShowMaxParticipants := GETFILTER(Type) = FORMAT(Type::Machine);
-        FILTERGROUP(0);
+        Rec.FILTERGROUP(3);
+        ShowType := Rec.GETFILTER(Type) = '';
+        ShowMaxParticipants := Rec.GETFILTER(Type) = FORMAT(Rec.Type::Machine);
+        Rec.FILTERGROUP(0);
         //CSD1.00<
     end;
 
 
     var
         [InDataSet]
-        showType: Boolean;
+        ShowType: Boolean;
         [InDataSet]
-        showMaxParticipants: Boolean;
+        ShowMaxParticipants: Boolean;
 
 }

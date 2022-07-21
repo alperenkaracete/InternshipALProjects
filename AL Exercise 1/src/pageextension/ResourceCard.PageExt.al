@@ -6,16 +6,18 @@ pageextension 51150 "ResourceCard" extends "Resource Card"
         addlast(General)
         {
 
-            field("Internal/External"; "Internal/External")
+            field("Internal/External"; Rec."Internal/External")
             {
 
                 ApplicationArea = All;
+                Caption = 'Internal-External Operations';
 
             }
-            field("Quantity Per Day"; "Quantity Per Day")
+            field("Quantity Per Day"; Rec."Quantity Per Day")
             {
 
                 ApplicationArea = All;
+                Caption = 'Quantity Per Day';
 
             }
 
@@ -27,11 +29,13 @@ pageextension 51150 "ResourceCard" extends "Resource Card"
 
             group(Room)
             {
+                Caption = 'Room';
 
-                field("Maximum Participants"; "Maximum Participants")
+                field("Maximum Participants"; Rec."Maximum Participants")
                 {
 
                     ApplicationArea = All;
+                    Caption = 'Maximum Participants';
                 }
             }
         }
