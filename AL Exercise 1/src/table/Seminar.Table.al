@@ -1,6 +1,7 @@
 table 50156 "Seminar"
 {
     DataClassification = CustomerContent;
+    Caption = 'Seminar';
 
 
 
@@ -9,6 +10,7 @@ table 50156 "Seminar"
         field(1; "No."; Code[20])
         {
             DataClassification = CustomerContent;
+            Caption = 'No.';
             trigger OnValidate()
             var
             begin
@@ -23,6 +25,7 @@ table 50156 "Seminar"
         field(2; Name; Text[50])
         {
             DataClassification = CustomerContent;
+            Caption = 'Name';
             trigger OnValidate()
             var
 
@@ -36,32 +39,38 @@ table 50156 "Seminar"
         {
             DataClassification = CustomerContent;
             DecimalPlaces = 0 : 1;
+            Caption = 'Seminar Duration';
 
         }
         field(4; "Minimum Participants"; Integer)
         {
             DataClassification = CustomerContent;
+            Caption = 'Minimum Participants';
 
         }
         field(5; "Maximum Participants"; Integer)
         {
             DataClassification = CustomerContent;
+            Caption = 'Maximum Participants';
 
         }
         field(6; "Search Name"; Code[50])
         {
             DataClassification = CustomerContent;
+            Caption = 'Search Name';
 
         }
         field(7; "Blocked"; Boolean)
         {
             DataClassification = CustomerContent;
+            Caption = 'Blocked';
 
         }
         field(8; "Last Date Modified"; Date)
         {
             DataClassification = CustomerContent;
             Editable = false;
+            Caption = 'Last Date Modified';
 
         }
         field(9; "Comment"; Boolean)
@@ -69,6 +78,7 @@ table 50156 "Seminar"
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = exist("Comment Line" where("Table Name" = const(Seminar), "No." = field("No.")));
+            Caption = 'Comment';
 
         }
         field(10; "Seminar Price"; Decimal)
@@ -76,12 +86,14 @@ table 50156 "Seminar"
             DataClassification = CustomerContent;
             Editable = false;
             AutoFormatType = 1;
+            Caption = 'Seminar Price';
         }
         field(11; "Gen. Prod. Posting Group"; Code[10])
         {
             DataClassification = CustomerContent;
             Editable = false;
             TableRelation = "Gen. Product Posting Group";
+            Caption = 'Gen. Prod. Posting Group';
             trigger OnValidate()
             var
 
@@ -99,12 +111,14 @@ table 50156 "Seminar"
             DataClassification = CustomerContent;
             Editable = false;
             TableRelation = "VAT Product Posting Group";
+            Caption = 'VAT Prod. Posting Group';
         }
         field(13; "No. Series"; Code[10])
         {
             DataClassification = CustomerContent;
             Editable = false;
             TableRelation = "No. Series";
+            Caption = 'No. Series';
         }
 
     }
@@ -160,15 +174,13 @@ table 50156 "Seminar"
     var
         myInt: Integer;
     begin
-        WITH Seminar DO BEGIN
-            Seminar := Rec;
-            SeminarSetup.GET;
-            SeminarSetup.TESTFIELD("Seminar Nos.");
-            IF NoSeriesMgt.SelectSeries(SeminarSetup."Seminar Nos.", xRec."No. Series", "No. Series") THEN BEGIN
-                NoSeriesMgt.SetSeries("No.");
-                Rec := Seminar;
-                EXIT(TRUE);
-            END;
+        Seminar := Rec;
+        SeminarSetup.GET;
+        SeminarSetup.TESTFIELD("Seminar Nos.");
+        IF NoSeriesMgt.SelectSeries(SeminarSetup."Seminar Nos.", xRec."No. Series", Seminar."No. Series") THEN BEGIN
+            NoSeriesMgt.SetSeries(Seminar."No.");
+            Rec := Seminar;
+            EXIT(TRUE);
         END;
     end;
 
