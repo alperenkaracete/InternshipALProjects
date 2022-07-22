@@ -91,7 +91,6 @@ table 50156 "Seminar"
         field(11; "Gen. Prod. Posting Group"; Code[10])
         {
             DataClassification = CustomerContent;
-            Editable = false;
             TableRelation = "Gen. Product Posting Group";
             Caption = 'Gen. Prod. Posting Group';
             trigger OnValidate()
@@ -109,14 +108,12 @@ table 50156 "Seminar"
         field(12; "VAT Prod. Posting Group"; Code[10])
         {
             DataClassification = CustomerContent;
-            Editable = false;
             TableRelation = "VAT Product Posting Group";
             Caption = 'VAT Prod. Posting Group';
         }
         field(13; "No. Series"; Code[10])
         {
             DataClassification = CustomerContent;
-            Editable = false;
             TableRelation = "No. Series";
             Caption = 'No. Series';
         }

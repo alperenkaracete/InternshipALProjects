@@ -94,7 +94,7 @@ table 50167 "Seminar Charge"
         }
         field(9; "To Invoice"; Boolean)
         {
-            InitValue = Yes;
+            InitValue = true;
             Caption = 'To Invoice';
         }
         field(10; "Bill-to Customer No."; Code[20])
@@ -169,7 +169,7 @@ table 50167 "Seminar Charge"
 
     trigger OnInsert()
     begin
-        SeminarRegistrationHeader.GET("Document No.");
+
     end;
 
     trigger OnModify()
