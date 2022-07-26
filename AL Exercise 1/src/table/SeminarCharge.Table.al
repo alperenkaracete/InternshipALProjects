@@ -65,13 +65,13 @@ table 50167 "Seminar Charge"
             Caption = 'Description';
 
         }
-        field(6; "Quantitiy"; Decimal)
+        field(6; "Quantity"; Decimal)
         {
             DecimalPlaces = 0 : 5;
             Caption = 'Quantitiy';
             trigger OnValidate()
             BEGIN
-                "Total Price" := ROUND("Unit Price" * Quantitiy, 0.01);
+                "Total Price" := ROUND("Unit Price" * Quantity, 0.01);
             END;
 
         }
@@ -82,7 +82,7 @@ table 50167 "Seminar Charge"
             Caption = 'Unit Price';
             trigger OnValidate()
             begin
-                "Total Price" := ROUND("Unit Price" * Quantitiy, 0.01);
+                "Total Price" := ROUND("Unit Price" * Quantity, 0.01);
             end;
 
         }

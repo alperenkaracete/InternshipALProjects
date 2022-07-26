@@ -22,7 +22,7 @@ page 50163 "Seminar Charges"
                     ApplicationArea = All;
 
                 }
-                field("Quantitiy"; Rec."Quantitiy")
+                field("Quantitiy"; Rec."Quantity")
                 {
                     ApplicationArea = All;
 
