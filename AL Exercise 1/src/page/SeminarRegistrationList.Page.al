@@ -5,7 +5,7 @@ page 50171 "Seminar Registration List"
     UsageCategory = Lists;
     SourceTable = "Seminar Registration Header";
     CardPageId = "Seminar Registration";
-
+    Editable = false;
 
     layout
     {

@@ -42,7 +42,7 @@ table 50180 "Seminar Journal Line"
             OptionMembers = "Registration","Cancelation";
             OptionCaption = 'Registration,Cancelation';
         }
-        field(7; "Document No. "; Code[20])
+        field(7; "Document No."; Code[20])
         {
             DataClassification = CustomerContent;
 

@@ -250,10 +250,9 @@ table 50169 "Seminar Registration Header"
         }
         field(24; "Comment"; Boolean)
         {
-            Caption = 'Comment';
+            Caption = 'Seminar Registration Header';
             FieldClass = FlowField;
-            CalcFormula = Exist("Seminar Comment Line" WHERE("Document Type" = CONST("Seminar Registration"),
-                                                                                                   "No." = FIELD("No.")));
+            CalcFormula = Exist("Seminar Comment Line" WHERE("Document Type" = CONST("Seminar Registration"), "No." = FIELD("No.")));
             Editable = false;
         }
         field(25; "Reason Code"; Code[10])
