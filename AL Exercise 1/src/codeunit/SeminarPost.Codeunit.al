@@ -3,6 +3,81 @@ codeunit 50184 "Seminar-Post"
     TableNo = "Seminar Registration Header";
     trigger OnRun()
     begin
+        ClearAll();
+        SeminarRegHeader := Rec;
+
+        SeminarRegHeader.TestField("Posting Date");
+        SeminarRegHeader.TestField("Document Date");
+        SeminarRegHeader.TestField("Seminar No.");
+        SeminarRegHeader.TestField("Duration");
+        SeminarRegHeader.TestField("Instructor Resource No.");
+        SeminarRegHeader.TestField("Room Resource No.");
+        SeminarRegHeader.TestField(Status, SeminarRegHeader.Status::Closed);
+        Rec := SeminarRegHeader;
+        SeminarRegLine.Reset();
+        SeminarRegLine.SETRANGE("Document No.", Rec."No.");
+        IF SeminarRegLine.ISEMPTY THEN
+            ERROR(Text001);
+        Window.OPEN('#1#################################\\' + Text002);
+        Window.UPDATE(1, STRSUBSTNO('%1 %2', Text003, Rec."No."));
+        IF SeminarRegHeader."Posting No." = '' THEN BEGIN
+            Rec.TESTFIELD(Rec."Posting No. Series");
+            Rec."Posting No." := NoSeriesMgt.GetNextNo(Rec."Posting No. Series", Rec."Posting Date", TRUE);
+            Rec.MODIFY;
+            COMMIT;
+        end;
+        SeminarRegLine.LOCKTABLE;
+        SourceCodeSetup.GET;
+        SourceCode := SourceCodeSetup.Seminar;
+        PstdSeminarRegHeader.INIT;
+        PstdSeminarRegHeader.TRANSFERFIELDS(SeminarRegHeader);
+        PstdSeminarRegHeader."No." := Rec."Posting No.";
+        PstdSeminarRegHeader."No. Series" := Rec."Posting No. Series";
+        PstdSeminarRegHeader."Source Code" := SourceCode;
+        PstdSeminarRegHeader."User ID" := USERID;
+        PstdSeminarRegHeader.INSERT;
+        Window.UPDATE(1, STRSUBSTNO(Text004, Rec."No.", PstdSeminarRegHeader."No."));
+        CopyCommentLines(SeminarCommentLine."Document Type"::"Seminar Registration", SeminarCommentLine."Document Type"::"Posted Seminar Registration", Rec."No.", PstdSeminarRegHeader."No.");
+        CopyCharges(Rec."No.", PstdSeminarRegHeader."No.");
+        LineCount := 0;
+        SeminarRegLine.RESET;
+        SeminarRegLine.SETRANGE("Document No.", Rec."No.");
+        IF SeminarRegLine.FINDSET THEN BEGIN
+            REPEAT
+                LineCount := LineCount + 1;
+                Window.UPDATE(2, LineCount);
+                SeminarRegLine.TESTFIELD("Bill-to Customer No.");
+                SeminarRegLine.TESTFIELD("Participant Contact No.");
+                IF NOT SeminarRegLine."To Invoice" THEN BEGIN
+                    SeminarRegLine."Seminar Price" := 0;
+                    SeminarRegLine."Line Discount %" := 0;
+                    SeminarRegLine."Line Discount Amount" := 0;
+                    SeminarRegLine.Amount := 0;
+                END;
+                // Post seminar entry
+                PostSeminarJnlLine(2); // Participant
+                // Insert posted seminar registration line
+                PstdSeminarRegLine.INIT;
+                PstdSeminarRegLine.TRANSFERFIELDS(SeminarRegLine);
+                PstdSeminarRegLine."Document No." := PstdSeminarRegHeader."No.";
+                PstdSeminarRegLine.INSERT;
+
+            UNTIL SeminarRegLine.NEXT = 0;
+            // Post charges to seminar ledger
+            PostCharges;
+            // Post instructor to seminar ledger
+            PostSeminarJnlLine(0); // Instructor
+            PostSeminarJnlLine(1); // Room
+            Rec.DELETE;
+            SeminarRegLine.DELETEALL;
+            SeminarCommentLine.SETRANGE("Document Type",
+             SeminarCommentLine."Document Type"::"Seminar Registration");
+            SeminarCommentLine.SETRANGE("No.", Rec."No.");
+            SeminarCommentLine.DELETEALL;
+            SeminarCharge.SETRANGE(Description);
+            SeminarCharge.DELETEALL;
+
+        END;
 
     end;
 
@@ -168,5 +243,12 @@ codeunit 50184 "Seminar-Post"
 
     LOCAL PROCEDURE PostCharges()
     BEGIN
+        SeminarCharge.RESET;
+        SeminarCharge.SETRANGE("Document No.", SeminarRegHeader."No.");
+        IF SeminarCharge.FindSet(FALSE, FALSE) THEN BEGIN
+            REPEAT
+                PostSeminarJnlLine(3); // Charge
+            UNTIL SeminarCharge.NEXT = 0;
+        END;
     END;
 }
