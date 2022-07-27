@@ -73,6 +73,13 @@ page 50171 "Seminar Registration List"
 
                 ApplicationArea = All;
             }
+
+            part("Seminar Details Fact Box"; "Seminar Details FactBox")
+            {
+
+                ApplicationArea = All;
+                SubPageLink = "No." = field("No.");
+            }
         }
     }
 
