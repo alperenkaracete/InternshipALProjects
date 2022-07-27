@@ -1,6 +1,8 @@
 page 50161 "Seminar Comment Sheet"
 {
     CaptionML = ENU = 'Seminar Comment Sheet';
+    UsageCategory = Lists;
+    ApplicationArea = All;
     MultipleNewLines = true;
     LinksAllowed = false;
     SourceTable = "Seminar Comment Line";
