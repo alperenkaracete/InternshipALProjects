@@ -393,12 +393,10 @@ table 50169 "Seminar Registration Header"
     var
         myInt: Integer;
     begin
-        IF "No." = '' THEN BEGIN
-            IF "Posting Date" = 0D THEN
-                "Posting Date" := WORKDATE;
-            "Document Date" := WORKDATE;
-            SeminarSetup.GET;
-            NoSeriesMgt.SetDefaultSeries("Posting No. Series", SeminarSetup."Posted Seminar Reg. No.");
-        end
+        IF "Posting Date" = 0D THEN
+            "Posting Date" := WORKDATE;
+        "Document Date" := WORKDATE;
+        SeminarSetup.GET;
+        NoSeriesMgt.SetDefaultSeries("Posting No. Series", SeminarSetup."Posted Seminar Reg. No.");
     end;
 }
