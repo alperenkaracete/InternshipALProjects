@@ -3,8 +3,6 @@ table 50156 "Seminar"
     DataClassification = CustomerContent;
     Caption = 'Seminar';
 
-
-
     fields
     {
         field(1; "No."; Code[20])
