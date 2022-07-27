@@ -97,6 +97,20 @@ page 50171 "Seminar Registration List"
                 Image = Costs;
 
             }
+
+            action("Posting")
+            {
+                ApplicationArea = All;
+                RunObject = codeunit "Seminar-Post (Yes/No)";
+                Image = PostDocument;
+                Promoted = true;
+                PromotedCategory = Process;
+                ShortcutKey = 'F9';
+                trigger OnAction()
+                begin
+
+                end;
+            }
         }
     }
 
