@@ -338,6 +338,9 @@ table 50169 "Seminar Registration Header"
             NoSeriesMgt.InitSeries(SeminarSetup."Seminar Registration Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         END;
         InitRecord;
+        IF GETFILTER("Seminar No.") <> '' THEN
+            IF GETRANGEMIN("Seminar No.") = GETRANGEMAX("Seminar No.") THEN
+                VALIDATE("Seminar No.", GETRANGEMIN("Seminar No."));
 
     end;
 
