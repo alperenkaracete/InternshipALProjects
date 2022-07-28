@@ -112,6 +112,61 @@ page 50156 "Seminar Card"
 
                 end;
             }
+
+            action("Seminar Registration")
+            {
+                ApplicationArea = All;
+                RunObject = page "Seminar Registration";
+                RunPageLink = "Seminar No." = field("No.");
+                RunPageMode = Create;
+                Promoted = true;
+                PromotedIsBig = true;
+                Image = NewTimesheet;
+
+                trigger OnAction()
+                begin
+
+                end;
+            }
+            group("Ledger Entries")
+            {
+
+                action("Seminar Ledger Entries")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "Seminar Ledger Entries";
+                    RunPageLink = "Seminar No." = field("No.");
+                    ShortcutKey = 'Ctrl + F7';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    Image = WarrantyLedger;
+
+                    trigger OnAction()
+                    begin
+
+                    end;
+                }
+            }
+
+            group(Registrations)
+            {
+
+                action("&Registrations")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "Seminar Registration List";
+                    RunPageLink = "No." = field("No.");
+                    PromotedCategory = Process;
+                    Promoted = true;
+                    Image = Timesheet;
+
+                    trigger OnAction()
+                    begin
+
+                    end;
+                }
+            }
         }
     }
 
