@@ -1,10 +1,10 @@
-page 50173 "Posted Seminar Regisration"
+page 50173 "Posted Seminar Registration"
 
 {
     PageType = Document;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Seminar Registration Header";
+    SourceTable = "Posted Seminar Reg. Header";
     Editable = false;
 
     layout
@@ -16,13 +16,7 @@ page 50173 "Posted Seminar Regisration"
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-                    trigger OnAssistEdit()
-                    var
 
-                    begin
-                        IF Rec.AssistEdit(xRec) THEN
-                            CurrPage.UPDATE;
-                    end;
 
                 }
                 field("Starting Date"; Rec."Starting Date")
