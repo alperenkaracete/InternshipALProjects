@@ -1,4 +1,4 @@
-page 50190 "Seminar Registers Page"
+page 50190 "Seminar Registers"
 {
     PageType = List;
     ApplicationArea = All;
