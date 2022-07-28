@@ -9,11 +9,13 @@ pageextension 50185 "ResourceLedgerEntries" extends "Resource Ledger Entries"
             {
 
                 ApplicationArea = All;
+                Caption = 'Seminar No.';
             }
             field("Seminar Registratio No."; Rec."Seminar Registration No.")
             {
 
                 ApplicationArea = All;
+                Caption = 'Seminar Registration No.';
             }
         }
     }

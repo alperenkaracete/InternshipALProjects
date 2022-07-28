@@ -7,11 +7,13 @@ pageextension 50180 "SourceCodeSetup" extends "Source Code Setup"
 
             group("Seminar Management")
             {
+                Caption = 'Seminar Management';
 
                 field(Seminar; Rec.Seminar)
                 {
 
                     ApplicationArea = All;
+                    Caption = 'Seminar';
                 }
             }
         }

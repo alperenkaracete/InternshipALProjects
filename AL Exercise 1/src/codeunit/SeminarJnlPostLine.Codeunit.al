@@ -10,19 +10,18 @@ codeunit 50181 "Seminar Jnl.-Post Line"
         SeminarJnlLine: Record "Seminar Journal Line";
         SeminarLedgerEntry: Record "Seminar Ledger Entry";
         SeminarRegister: Record "Seminar Register";
-        "SeminarJnlCheckLine": Codeunit "Seminar Jnl.-Check Line";
+        SeminarJnlCheckLine: Codeunit "Seminar Jnl.-Check Line";
         NextEntryNo: Integer;
 
-    procedure RunWithCheck(var SeminarJnlLine: Record "Seminar Journal Line")
+    procedure RunWithCheck(var SeminarJnlLine2: Record "Seminar Journal Line")
     var
-        SeminarJnlLine2: Record "Seminar Journal Line";
     begin
         SeminarJnlLine.COPY(SeminarJnlLine2);
-        "Code";
+        Code;
         SeminarJnlLine2 := SeminarJnlLine;
     end;
 
-    local procedure "Code"()
+    local procedure Code()
     var
         myInt: Integer;
     begin
@@ -57,9 +56,37 @@ codeunit 50181 "Seminar Jnl.-Post Line"
         END;
         SeminarRegister."To Entry No." := NextEntryNo;
         SeminarRegister.MODIFY;
-
-
-
+        SeminarLedgerEntry.INIT;
+        SeminarLedgerEntry."Seminar No." := SeminarJnlLine."Seminar No.";
+        SeminarLedgerEntry."Posting Date" := SeminarJnlLine."Posting Date";
+        SeminarLedgerEntry."Document Date" := SeminarJnlLine."Document Date";
+        SeminarLedgerEntry."Entry Type" := SeminarJnlLine."Entry Type";
+        SeminarLedgerEntry."Document No." := SeminarJnlLine."Document No.";
+        SeminarLedgerEntry.Description := SeminarJnlLine.Description;
+        SeminarLedgerEntry."Bill-to Customer No." := SeminarJnlLine."Bill-to Customer No.";
+        SeminarLedgerEntry."Charge Type" := SeminarJnlLine."Charge Type";
+        SeminarLedgerEntry."Type" := SeminarJnlLine."Type";
+        SeminarLedgerEntry.Quantity := SeminarJnlLine.Quantity;
+        SeminarLedgerEntry."Unit Price" := SeminarJnlLine."Unit Price";
+        SeminarLedgerEntry."Total Price" := SeminarJnlLine."Total Price";
+        SeminarLedgerEntry."Participant Contact No." := SeminarJnlLine."Participant Contact No.";
+        SeminarLedgerEntry."Participant Name" := SeminarJnlLine."Participant Name";
+        SeminarLedgerEntry.Chargeable := SeminarJnlLine.Chargeable;
+        SeminarLedgerEntry."Room Resource No." := SeminarJnlLine."Room Resource No.";
+        SeminarLedgerEntry."Instructor Resource No." := SeminarJnlLine."Instructor Resource No.";
+        SeminarLedgerEntry."Starting Date" := SeminarJnlLine."Starting Date";
+        SeminarLedgerEntry."Seminar Registration No." := SeminarJnlLine."Seminar Registration No.";
+        SeminarLedgerEntry."Res. Ledger Entry No." := SeminarJnlLine."Res. Ledger Entry No.";
+        SeminarLedgerEntry."Source Type" := SeminarJnlLine."Source Type";
+        SeminarLedgerEntry."Source No." := SeminarJnlLine."Source No.";
+        SeminarLedgerEntry."Journal Batch Name" := SeminarJnlLine."Journal Batch Name";
+        SeminarLedgerEntry."Source Code" := SeminarJnlLine."Source Code";
+        SeminarLedgerEntry."Reason Code" := SeminarJnlLine."Reason Code";
+        SeminarLedgerEntry."No. Series" := SeminarJnlLine."Posting No. Series";
+        SeminarLedgerEntry."User ID" := USERID;
+        SeminarLedgerEntry."Entry No." := NextEntryNo;
+        SeminarLedgerEntry.INSERT;
+        NextEntryNo := NextEntryNo + 1;
     end;
 
 }

@@ -6,6 +6,7 @@ page 50171 "Seminar Registration List"
     SourceTable = "Seminar Registration Header";
     CardPageId = "Seminar Registration";
     Editable = false;
+    Caption = 'Seminar Registration List';
 
     layout
     {
@@ -13,44 +14,53 @@ page 50171 "Seminar Registration List"
         {
             repeater("Group")
             {
+                Caption = 'Group';
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'No.';
 
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Starting Date';
 
                 }
                 field("Seminar No."; Rec."Seminar No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar No.';
 
                 }
                 field("Seminar Name"; Rec."Seminar Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Name';
 
                 }
                 field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
+                    Caption = 'Status';
 
                 }
                 field("Duration"; Rec."Duration")
                 {
                     ApplicationArea = All;
+                    Caption = 'Duration';
 
                 }
                 field("Maximum Participants"; Rec."Maximum Participants")
                 {
                     ApplicationArea = All;
+                    Caption = 'Maximum Participants';
 
                 }
                 field("Room Resource No."; Rec."Room Resource No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room No.';
 
                 }
 
@@ -79,6 +89,7 @@ page 50171 "Seminar Registration List"
 
                 ApplicationArea = All;
                 SubPageLink = "No." = field("No.");
+                Caption = 'Seminar Details FactBox';
             }
         }
     }
@@ -94,6 +105,7 @@ page 50171 "Seminar Registration List"
                 RunPageView = where("No." = const());
                 RunPageLink = "Comment" = field("No.");
                 Image = Comment;
+                Caption = 'Comment';
 
             }
             action(Costs)
@@ -102,6 +114,7 @@ page 50171 "Seminar Registration List"
                 RunObject = page "Seminar Charges";
                 RunPageLink = "No." = field("No.");
                 Image = Costs;
+                Caption = 'Costs';
 
             }
 
@@ -113,6 +126,7 @@ page 50171 "Seminar Registration List"
                 Promoted = true;
                 PromotedCategory = Process;
                 ShortcutKey = 'F9';
+                Caption = 'Posting';
                 trigger OnAction()
                 begin
 

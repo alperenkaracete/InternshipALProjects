@@ -16,18 +16,22 @@ page 50161 "Seminar Comment Sheet"
         {
             repeater(GroupName)
             {
+                Caption = 'GroupName';
                 field("Date"; Rec."Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Date';
                 }
                 field(Comment; Rec."Comment")
                 {
                     ApplicationArea = all;
+                    Caption = 'Comment';
                 }
                 field("Code"; Rec."Code")
                 {
                     Visible = false;
                     ApplicationArea = all;
+                    Caption = 'Code';
                 }
             }
         }
@@ -40,6 +44,7 @@ page 50161 "Seminar Comment Sheet"
             action(ActionName)
             {
                 ApplicationArea = All;
+                Caption = 'ActionName';
 
                 trigger OnAction()
                 begin

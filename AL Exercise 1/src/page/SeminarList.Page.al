@@ -83,6 +83,7 @@ page 50157 "Seminar List"
                 Promoted = true;
                 PromotedIsBig = true;
                 Image = NewTimesheet;
+                Caption = 'Seminar Registration';
 
                 trigger OnAction()
                 begin
@@ -91,6 +92,7 @@ page 50157 "Seminar List"
             }
             group("Ledger Entries")
             {
+                Caption = 'Ledger Entries';
 
                 action("Seminar Ledger Entries")
                 {
@@ -102,6 +104,7 @@ page 50157 "Seminar List"
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     Image = WarrantyLedger;
+                    Caption = 'Seminar Ledger Entries';
 
                     trigger OnAction()
                     begin
@@ -111,6 +114,7 @@ page 50157 "Seminar List"
             }
             group(Registrations)
             {
+                Caption = 'Registrations';
 
                 action("&Registrations")
                 {
@@ -120,6 +124,7 @@ page 50157 "Seminar List"
                     PromotedCategory = Process;
                     Promoted = true;
                     Image = Timesheet;
+                    Caption = '&Registrations';
 
                     trigger OnAction()
                     begin

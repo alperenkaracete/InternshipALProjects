@@ -13,7 +13,6 @@ codeunit 50184 "Seminar-Post"
         SeminarRegHeader.TestField("Instructor Resource No.");
         SeminarRegHeader.TestField("Room Resource No.");
         SeminarRegHeader.TestField(Status, SeminarRegHeader.Status::Closed);
-        Rec := SeminarRegHeader;
         SeminarRegLine.Reset();
         SeminarRegLine.SETRANGE("Document No.", Rec."No.");
         IF SeminarRegLine.ISEMPTY THEN
@@ -21,9 +20,9 @@ codeunit 50184 "Seminar-Post"
         Window.OPEN('#1#################################\\' + Text002);
         Window.UPDATE(1, STRSUBSTNO('%1 %2', Text003, Rec."No."));
         IF SeminarRegHeader."Posting No." = '' THEN BEGIN
-            Rec.TESTFIELD(Rec."Posting No. Series");
-            Rec."Posting No." := NoSeriesMgt.GetNextNo(Rec."Posting No. Series", Rec."Posting Date", TRUE);
-            Rec.MODIFY;
+            SeminarRegHeader.TESTFIELD(SeminarRegHeader."Posting No. Series");
+            SeminarRegHeader."Posting No." := NoSeriesMgt.GetNextNo(Rec."Posting No. Series", Rec."Posting Date", TRUE);
+            SeminarRegHeader.MODIFY;
             COMMIT;
         end;
         SeminarRegLine.LOCKTABLE;
@@ -76,6 +75,7 @@ codeunit 50184 "Seminar-Post"
             SeminarCommentLine.DELETEALL;
             SeminarCharge.SETRANGE(Description);
             SeminarCharge.DELETEALL;
+            Rec := SeminarRegHeader;
 
         END;
 

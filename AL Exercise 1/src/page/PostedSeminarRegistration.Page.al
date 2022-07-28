@@ -6,6 +6,7 @@ page 50173 "Posted Seminar Registration"
     UsageCategory = Administration;
     SourceTable = "Posted Seminar Reg. Header";
     Editable = false;
+    Caption = 'Posted Seminar Registration';
 
     layout
     {
@@ -13,66 +14,79 @@ page 50173 "Posted Seminar Registration"
         {
             group(General)
             {
+                Caption = 'General';
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'No.';
 
 
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Starting Date';
 
                 }
                 field("Seminar No."; Rec."Seminar No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar No.';
 
                 }
                 field("Seminar Name"; Rec."Seminar Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Name';
 
                 }
 
                 field("Instructor Resource No."; Rec."Instructor Resource No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Instructor No.';
 
                 }
                 field("Instructor Name"; Rec."Instructor Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Instructor Name';
 
                 }
                 field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Posting Date';
 
                 }
                 field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Document Date';
 
                 }
                 field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
+                    Caption = 'Status';
 
                 }
                 field("Duration"; Rec."Duration")
                 {
                     ApplicationArea = All;
+                    Caption = 'Duration';
 
                 }
                 field("Minimum Participants"; Rec."Minimum Participants")
                 {
                     ApplicationArea = All;
+                    Caption = 'Minimum Participants';
 
                 }
                 field("Maximum Participants"; Rec."Maximum Participants")
                 {
                     ApplicationArea = All;
+                    Caption = 'Maximum Participants';
 
                 }
 
@@ -80,45 +94,54 @@ page 50173 "Posted Seminar Registration"
 
             group("Seminar Room")
             {
+                Caption = 'Seminar Room';
 
                 field("Room Resource No."; Rec."Room Resource No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room No.';
 
                 }
                 field("Room Name"; Rec."Room Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room Name';
 
                 }
                 field("Room Address"; Rec."Room Address")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room Address';
 
                 }
                 field("Room Address 2"; Rec."Room Address 2")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room Address 2';
 
                 }
                 field("Room Post Code"; Rec."Room Post Code")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room Post Code';
 
                 }
                 field("Room City"; Rec."Room City")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room City';
 
                 }
                 field("Room Country/Reg. Code"; Rec."Room Country/Reg. Code")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room Country/Reg. Code';
 
                 }
                 field("Room County"; Rec."Room County")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room County';
 
                 }
             }
@@ -127,25 +150,30 @@ page 50173 "Posted Seminar Registration"
 
                 ApplicationArea = All;
                 SubPageLink = "Document No." = field("No.");
+                Caption = 'Seminar Registration Subform';
 
             }
 
             group("Invoicing")
             {
+                Caption = 'Invoicing';
 
                 field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
+                    Caption = 'Gen. Prod. Posting Group';
 
                 }
                 field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
                 {
                     ApplicationArea = All;
+                    Caption = 'VAT Prod. Posting Group';
 
                 }
                 field("Seminar Price"; Rec."Seminar Price")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Price';
 
                 }
 
@@ -160,6 +188,7 @@ page 50173 "Posted Seminar Registration"
             {
 
                 ApplicationArea = All;
+                Caption = '9084';
 
             }
 
@@ -181,6 +210,7 @@ page 50173 "Posted Seminar Registration"
 
                 ApplicationArea = All;
                 SubPageLink = "No." = field("Seminar No.");
+                Caption = 'Seminar Details FactBox';
 
             }
 
@@ -190,6 +220,7 @@ page 50173 "Posted Seminar Registration"
 
                 ApplicationArea = All;
                 SubPageLink = "No." = field("Bill-to Customer No.");
+                Caption = 'Customer Details FactBox';
             }
 
         }
@@ -208,6 +239,7 @@ page 50173 "Posted Seminar Registration"
                 RunPageView = where("Document Type" = const(1));
                 RunPageLink = "No." = field("No.");
                 Image = Comment;
+                Caption = 'Comments';
                 trigger OnAction()
                 begin
 
@@ -219,6 +251,7 @@ page 50173 "Posted Seminar Registration"
                 RunObject = page "Seminar Charges";
                 RunPageLink = "No." = field("No.");
                 Image = Costs;
+                Caption = 'Costs';
                 trigger OnAction()
                 begin
 

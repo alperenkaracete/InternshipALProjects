@@ -7,6 +7,7 @@ tableextension 50180 "SourceCodeSetup" extends "Source Code Setup"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Source Code";
+            Caption = 'Seminar';
         }
 
     }

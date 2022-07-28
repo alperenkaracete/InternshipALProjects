@@ -1,6 +1,7 @@
 table 50169 "Seminar Registration Header"
 {
     DataClassification = CustomerContent;
+    Caption = 'Seminar Registration Header';
 
     fields
     {

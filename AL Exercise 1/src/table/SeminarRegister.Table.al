@@ -1,35 +1,41 @@
 table 50183 "Seminar Register"
 {
     DataClassification = CustomerContent;
+    Caption = 'Seminar Register';
 
     fields
     {
         field(1; "No."; Integer)
         {
             DataClassification = CustomerContent;
+            Caption = 'No.';
 
         }
         field(2; "From Entry No."; Integer)
         {
             DataClassification = CustomerContent;
             TableRelation = "Seminar Ledger Entry";
+            Caption = 'From Entry No.';
 
         }
         field(3; "To Entry No."; Integer)
         {
             DataClassification = CustomerContent;
             TableRelation = "Seminar Ledger Entry";
+            Caption = 'To Entry No.';
 
         }
         field(4; "Creation Date"; Date)
         {
             DataClassification = CustomerContent;
+            Caption = 'Creation Date';
 
         }
         field(5; "Source Code"; Code[10])
         {
             DataClassification = CustomerContent;
             TableRelation = "Source Code";
+            Caption = 'Source Code';
         }
         field(6; "User ID"; Code[20])
         {
@@ -37,12 +43,14 @@ table 50183 "Seminar Register"
             TableRelation = User."User Name";
             DataClassification = CustomerContent;
             TestTableRelation = false;
+            Caption = 'User ID';
 
         }
 
         field(7; "Journal Batch Name"; Code[10])
         {
             DataClassification = CustomerContent;
+            Caption = 'Journal Batch Name';
 
         }
     }

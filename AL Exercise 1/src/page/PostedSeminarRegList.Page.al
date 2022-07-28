@@ -5,6 +5,7 @@ page 50179 "Posted Seminar Reg. List"
     UsageCategory = Lists;
     SourceTable = "Posted Seminar Reg. Header";
     Editable = false;
+    Caption = 'Posted Seminar Reg. List';
 
     layout
     {
@@ -12,44 +13,53 @@ page 50179 "Posted Seminar Reg. List"
         {
             repeater("Group")
             {
+                Caption = 'Group';
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'No.';
 
                 }
                 field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
+                    Caption = 'Starting Date';
 
                 }
                 field("Seminar No."; Rec."Seminar No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar No.';
 
                 }
                 field("Seminar Name"; Rec."Seminar Name")
                 {
                     ApplicationArea = All;
+                    Caption = 'Seminar Name';
 
                 }
                 field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
+                    Caption = 'Status';
 
                 }
                 field("Duration"; Rec."Duration")
                 {
                     ApplicationArea = All;
+                    Caption = 'Duration';
 
                 }
                 field("Maximum Participants"; Rec."Maximum Participants")
                 {
                     ApplicationArea = All;
+                    Caption = 'Maximum Participants';
 
                 }
                 field("Room Resource No."; Rec."Room Resource No.")
                 {
                     ApplicationArea = All;
+                    Caption = 'Room No.';
 
                 }
 
@@ -86,6 +96,7 @@ page 50179 "Posted Seminar Reg. List"
                 RunPageView = where("No." = const());
                 RunPageLink = "Comment" = field("No.");
                 Image = Comment;
+                Caption = 'Comment';
 
             }
             action(Costs)
@@ -94,6 +105,7 @@ page 50179 "Posted Seminar Reg. List"
                 RunObject = page "Seminar Charges";
                 RunPageLink = "No." = field("No.");
                 Image = Costs;
+                Caption = 'Costs';
 
             }
         }

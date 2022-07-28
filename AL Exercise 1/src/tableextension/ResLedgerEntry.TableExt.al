@@ -6,12 +6,14 @@ tableextension 50182 "ResLedgerEntry" extends "Res. Ledger Entry"
         {
 
             TableRelation = Seminar;
+            Caption = 'Seminar No.';
         }
 
         field(60001; "Seminar Registration No."; Code[20])
         {
 
             TableRelation = "Posted Seminar Reg. Header";
+            Caption = 'Seminar Registration No.';
         }
     }
 
