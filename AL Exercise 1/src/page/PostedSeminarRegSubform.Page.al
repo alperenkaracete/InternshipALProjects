@@ -5,7 +5,7 @@ page 50187 "Posted Seminar Reg. Subform"
     DelayedInsert = true;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "Seminar Registration Line";
+    SourceTable = "Posted Seminar Reg. Line";
     AutoSplitKey = true;
     Caption = 'Lines';
 

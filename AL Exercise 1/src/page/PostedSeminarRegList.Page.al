@@ -3,10 +3,8 @@ page 50179 "Posted Seminar Reg. List"
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "Seminar Registration Header";
-    CardPageId = "Seminar Registration";
+    SourceTable = "Posted Seminar Reg. Header";
     Editable = false;
-
 
     layout
     {
