@@ -1,6 +1,9 @@
 table 50191 "Posted Seminar Reg. Header"
 {
     DataClassification = CustomerContent;
+    LookupPageId = "Posted Seminar Registration";
+    DrillDownPageId = "Posted Seminar Registration";
+
 
     fields
     {

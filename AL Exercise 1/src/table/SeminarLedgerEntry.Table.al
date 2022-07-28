@@ -1,6 +1,8 @@
 table 50181 "Seminar Ledger Entry"
 {
     DataClassification = CustomerContent;
+    LookupPageId = "Seminar Ledger Entries";
+    DrillDownPageId = "Seminar Ledger Entries";
 
     fields
     {
@@ -33,7 +35,7 @@ table 50181 "Seminar Ledger Entry"
             OptionMembers = "Registration","Cancelation";
             OptionCaption = 'Registration,Cancelation';
         }
-        field(7; "Document No. "; Code[20])
+        field(7; "Document No."; Code[20])
         {
             DataClassification = CustomerContent;
 
@@ -178,6 +180,10 @@ table 50181 "Seminar Ledger Entry"
         key(Key1; "Entry No.")
         {
             Clustered = true;
+        }
+        key(Key2; "Document No.", "Posting Date")
+        {
+
         }
     }
 
