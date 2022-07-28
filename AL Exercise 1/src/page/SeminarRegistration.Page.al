@@ -242,9 +242,24 @@ page 50160 "Seminar Registration"
 
                 end;
             }
+
+            action(Navigate)
+            {
+                ApplicationArea = All;
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    Navigate.SetDoc("Posting Date", "No.");
+                    Navigate.RUN;
+                end;
+            }
         }
     }
 
     var
         myInt: Integer;
+        Navigate: page Navigate;
 }

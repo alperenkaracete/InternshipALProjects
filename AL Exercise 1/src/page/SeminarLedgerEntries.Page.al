@@ -17,7 +17,7 @@ page 50185 "Seminar Ledger Entries"
                     ApplicationArea = All;
 
                 }
-                field("Document No. "; Rec."Document No. ")
+                field("Document No. "; Rec."Document No.")
                 {
                     ApplicationArea = All;
 
@@ -148,9 +148,23 @@ page 50185 "Seminar Ledger Entries"
 
                 end;
             }
+            action(Navigate)
+            {
+                ApplicationArea = All;
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    Navigate.SetDoc(Rec."Posting Date", Rec."Document No.");
+                    Navigate.RUN;
+                end;
+            }
         }
     }
 
     var
         myInt: Integer;
+        Navigate: page Navigate;
 }
