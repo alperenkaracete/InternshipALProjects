@@ -291,6 +291,20 @@ page 50160 "Seminar Registration"
                     Navigate.RUN;
                 end;
             }
+            action(Print)
+            {
+                ApplicationArea = All;
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+                Caption = 'Print';
+                RunObject = report SeminarReport;
+
+                trigger OnAction()
+                begin
+
+                end;
+            }
         }
     }
 
