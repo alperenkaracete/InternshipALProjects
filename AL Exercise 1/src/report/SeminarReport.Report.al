@@ -4,6 +4,7 @@ report 52000 "SeminarReport"
     UsageCategory = ReportsAndAnalysis;
     Caption = 'Seminar Reg.- Participant List';
     DefaultLayout = RDLC;
+    ApplicationArea = All;
 
     RDLCLayout = 'MyRDLReport.rdl';
 

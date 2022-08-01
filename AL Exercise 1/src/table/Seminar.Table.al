@@ -82,7 +82,6 @@ table 50156 "Seminar"
         field(10; "Seminar Price"; Decimal)
         {
             DataClassification = CustomerContent;
-            Editable = false;
             AutoFormatType = 1;
             Caption = 'Seminar Price';
         }
@@ -114,6 +113,37 @@ table 50156 "Seminar"
             DataClassification = CustomerContent;
             TableRelation = "No. Series";
             Caption = 'No. Series';
+        }
+        field(20; "Date Filter"; Date)
+        {
+            FieldClass = FlowFilter;
+        }
+        field(21; "Charge Type Filter"; Option)
+        {
+            FieldClass = FlowFilter;
+            OptionCaption = 'Instructor,Room,Participant,Charge';
+            OptionMembers = "Instructor","Room","Participant","Charge";
+        }
+        field(25; "Total Price"; Decimal)
+        {
+            FieldClass = FlowField;
+            Editable = false;
+            AutoFormatType = 1;
+            CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter")));
+        }
+        field(26; "Total Price (Not Chargeable)"; Decimal)
+        {
+            FieldClass = FlowField;
+            Editable = false;
+            AutoFormatType = 1;
+            CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter"), Chargeable = const(false)));
+        }
+        field(27; "Total Price (Chargeable)"; Decimal)
+        {
+            FieldClass = FlowField;
+            Editable = false;
+            AutoFormatType = 1;
+            CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter"), Chargeable = const(true)));
         }
 
     }
