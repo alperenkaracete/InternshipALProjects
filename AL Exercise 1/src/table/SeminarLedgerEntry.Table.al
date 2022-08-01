@@ -214,6 +214,10 @@ table 50181 "Seminar Ledger Entry"
         {
 
         }
+        key(Key3; "Seminar No.", "Posting Date", "Charge Type", Chargeable)
+        {
+            SumIndexFields = "Total Price";
+        }
     }
 
     var
