@@ -81,9 +81,10 @@ page 50157 "Seminar List"
                 action("Statistics")
                 {
                     ApplicationArea = All;
-
                     RunObject = page "Seminar Statistics";
                     Image = Statistics;
+                    RunPageLink = "No." = field("No.");
+
                 }
             }
             action("Seminar Registration")
