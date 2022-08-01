@@ -113,6 +113,19 @@ page 50156 "Seminar Card"
                 end;
             }
 
+            group("Related Infromation Menu")
+            {
+
+                action("Statistics")
+                {
+                    ApplicationArea = All;
+
+                    RunObject = page "Seminar Statistics";
+                    Image = Statistics;
+                    RunPageLink = "No." = field("No.");
+                }
+            }
+
             action("Seminar Registration")
             {
                 ApplicationArea = All;

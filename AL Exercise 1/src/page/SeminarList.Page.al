@@ -74,6 +74,18 @@ page 50157 "Seminar List"
 
                 end;
             }
+
+            group("Related Infromation Menu")
+            {
+
+                action("Statistics")
+                {
+                    ApplicationArea = All;
+
+                    RunObject = page "Seminar Statistics";
+                    Image = Statistics;
+                }
+            }
             action("Seminar Registration")
             {
                 ApplicationArea = All;
