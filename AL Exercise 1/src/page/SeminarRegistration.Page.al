@@ -16,13 +16,10 @@ page 50160 "Seminar Registration"
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-                    Caption = 'No.';
-                    trigger OnAssistEdit()
-                    var
-
+                    ToolTip = 'Specifies the value of the No. field.';
+                    trigger OnValidate()
                     begin
-                        IF Rec.AssistEdit(xRec) THEN
-                            CurrPage.UPDATE;
+                        CurrPage.SaveRecord();
                     end;
 
                 }
