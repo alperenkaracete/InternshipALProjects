@@ -11,61 +11,6 @@
       <rd:DataSourceID>14e4ec2e-868f-497e-813c-d8555db4b74d</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Seminar_No_">
-          <DataField>Seminar_No_</DataField>
-        </Field>
-        <Field Name="Seminar_Name">
-          <DataField>Seminar_Name</DataField>
-        </Field>
-        <Field Name="Starting_Date">
-          <DataField>Starting_Date</DataField>
-        </Field>
-        <Field Name="Duration">
-          <DataField>Duration</DataField>
-        </Field>
-        <Field Name="DurationFormat">
-          <DataField>DurationFormat</DataField>
-        </Field>
-        <Field Name="Instructor_Name">
-          <DataField>Instructor_Name</DataField>
-        </Field>
-        <Field Name="Room_Name">
-          <DataField>Room_Name</DataField>
-        </Field>
-        <Field Name="Bill_to_Customer_No_">
-          <DataField>Bill_to_Customer_No_</DataField>
-        </Field>
-        <Field Name="Participant_Contact_No_">
-          <DataField>Participant_Contact_No_</DataField>
-        </Field>
-        <Field Name="Participant_Name">
-          <DataField>Participant_Name</DataField>
-        </Field>
-        <Field Name="Number">
-          <DataField>Number</DataField>
-        </Field>
-      </Fields>
-      <Filters>
-        <Filter>
-          <FilterExpression>=Fields!Number.Value</FilterExpression>
-          <Operator>Equal</Operator>
-          <FilterValues>
-            <FilterValue>1</FilterValue>
-          </FilterValues>
-        </Filter>
-      </Filters>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -99,7 +44,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!No_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!No_Caption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -124,14 +69,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox171">
+                        <Textbox Name="No_1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!No_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!No_.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -140,7 +85,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox171</rd:DefaultName>
+                          <rd:DefaultName>No_1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -232,7 +177,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!SeminarNo_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!Seminar_No_Caption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -257,14 +202,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox174">
+                        <Textbox Name="Seminar_No_1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SeminarNo_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Seminar_No_.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -273,7 +218,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox174</rd:DefaultName>
+                          <rd:DefaultName>Seminar_No_1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -365,7 +310,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!SeminarName_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!Seminar_NameCaption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -390,14 +335,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox177">
+                        <Textbox Name="Seminar_Name">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SeminarName_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Seminar_Name.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -406,7 +351,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox177</rd:DefaultName>
+                          <rd:DefaultName>Seminar_Name</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -498,7 +443,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!StartingDate_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!Starting_DateCaption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -523,14 +468,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox186">
+                        <Textbox Name="Starting_Date">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!StartingDate_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Starting_Date.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -539,7 +484,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox186</rd:DefaultName>
+                          <rd:DefaultName>Starting_Date</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -631,7 +576,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!Duration_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!DurationCaption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -656,14 +601,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox180">
+                        <Textbox Name="Duration1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Duration_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Duration.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -672,7 +617,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox180</rd:DefaultName>
+                          <rd:DefaultName>Duration1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -764,7 +709,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!InstructorName_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!Instructor_NameCaption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -789,14 +734,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox183">
+                        <Textbox Name="Instructor_Name1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!InstructorName_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Instructor_Name.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -805,7 +750,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox183</rd:DefaultName>
+                          <rd:DefaultName>Instructor_Name1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -897,7 +842,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!RoomName_SeminarRegistrationHeaderCaption.Value</Value>
+                                  <Value>=Parameters!Room_NameCaption.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -922,14 +867,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox203">
+                        <Textbox Name="Room_Name1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!RoomName_SeminarRegistrationHeader.Value</Value>
+                                  <Value>=Fields!Room_Name.Value</Value>
                                   <Style>
                                     <Color>Blue</Color>
                                   </Style>
@@ -938,7 +883,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox203</rd:DefaultName>
+                          <rd:DefaultName>Room_Name1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1023,7 +968,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Bill_to_Customer_No_1">
+                        <Textbox Name="Bill_to_Customer_No_">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1039,7 +984,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Bill_to_Customer_No_1</rd:DefaultName>
+                          <rd:DefaultName>Bill_to_Customer_No_</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1315,7 +1260,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Filters>
               <Filter>
-                <FilterExpression>=Len(Fields!No_SeminarRegistrationHeader.Value)</FilterExpression>
+                <FilterExpression>=Fields!No_.Value</FilterExpression>
                 <Operator>GreaterThan</Operator>
                 <FilterValues>
                   <FilterValue>0</FilterValue>
@@ -1352,7 +1297,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!SeminarRegistrationHeader.Value</Value>
+                      <Value>=Parameters!LabelName.Value</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                         <Color>Blue</Color>
@@ -1365,7 +1310,7 @@
               <rd:DefaultName>Textbox209</rd:DefaultName>
               <Top>0.03695in</Top>
               <Height>0.25in</Height>
-              <Width>1in</Width>
+              <Width>2.14583in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1395,7 +1340,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox209</rd:DefaultName>
               <Top>0.35639in</Top>
-              <Left>8.34028in</Left>
+              <Left>7.02084in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -1428,7 +1373,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox209</rd:DefaultName>
               <Top>0.03695in</Top>
-              <Left>8.34028in</Left>
+              <Left>7.02084in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>2</ZIndex>
@@ -1460,8 +1405,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox209</rd:DefaultName>
-              <Top>0.64806in</Top>
-              <Left>8.34028in</Left>
+              <Top>0.69444in</Top>
+              <Left>7.02084in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>3</ZIndex>
@@ -1482,7 +1427,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!Number.Value, "DataSet_Result")</Value>
+                      <Value>=Last(Fields!CompanyInfo.Value, "DataSet_Result")</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1494,35 +1439,6 @@
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>4</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox14">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Last(Fields!CompanyInformation_Name.Value, "DataSet_Result")</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.67584in</Top>
-              <Height>0.25in</Height>
-              <Width>1in</Width>
-              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1545,6 +1461,15 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="LabelName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LabelName</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LabelName</Prompt>
+    </ReportParameter>
     <ReportParameter Name="No_Caption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -1635,75 +1560,80 @@
       </DefaultValue>
       <Prompt>Participant_NameCaption</Prompt>
     </ReportParameter>
-    <ReportParameter Name="NumberCaption">
+    <ReportParameter Name="CompanyInfoCaption">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>NumberCaption</Value>
+          <Value>CompanyInfoCaption</Value>
         </Values>
       </DefaultValue>
-      <Prompt>NumberCaption</Prompt>
+      <Prompt>CompanyInfoCaption</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>11</NumberOfRows>
+      <NumberOfRows>12</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>No_Caption</ParameterName>
+          <ParameterName>LabelName</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>Seminar_No_Caption</ParameterName>
+          <ParameterName>No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>Seminar_NameCaption</ParameterName>
+          <ParameterName>Seminar_No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>3</RowIndex>
-          <ParameterName>Starting_DateCaption</ParameterName>
+          <ParameterName>Seminar_NameCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>4</RowIndex>
-          <ParameterName>DurationCaption</ParameterName>
+          <ParameterName>Starting_DateCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>5</RowIndex>
-          <ParameterName>Instructor_NameCaption</ParameterName>
+          <ParameterName>DurationCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>6</RowIndex>
-          <ParameterName>Room_NameCaption</ParameterName>
+          <ParameterName>Instructor_NameCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>7</RowIndex>
-          <ParameterName>Bill_to_Customer_No_Caption</ParameterName>
+          <ParameterName>Room_NameCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>8</RowIndex>
-          <ParameterName>Participant_Contact_No_Caption</ParameterName>
+          <ParameterName>Bill_to_Customer_No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>9</RowIndex>
-          <ParameterName>Participant_NameCaption</ParameterName>
+          <ParameterName>Participant_Contact_No_Caption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>10</RowIndex>
-          <ParameterName>NumberCaption</ParameterName>
+          <ParameterName>Participant_NameCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>CompanyInfoCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1746,4 +1676,50 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Seminar_No_">
+          <DataField>Seminar_No_</DataField>
+        </Field>
+        <Field Name="Seminar_Name">
+          <DataField>Seminar_Name</DataField>
+        </Field>
+        <Field Name="Starting_Date">
+          <DataField>Starting_Date</DataField>
+        </Field>
+        <Field Name="Duration">
+          <DataField>Duration</DataField>
+        </Field>
+        <Field Name="DurationFormat">
+          <DataField>DurationFormat</DataField>
+        </Field>
+        <Field Name="Instructor_Name">
+          <DataField>Instructor_Name</DataField>
+        </Field>
+        <Field Name="Room_Name">
+          <DataField>Room_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Customer_No_">
+          <DataField>Bill_to_Customer_No_</DataField>
+        </Field>
+        <Field Name="Participant_Contact_No_">
+          <DataField>Participant_Contact_No_</DataField>
+        </Field>
+        <Field Name="Participant_Name">
+          <DataField>Participant_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo">
+          <DataField>CompanyInfo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
