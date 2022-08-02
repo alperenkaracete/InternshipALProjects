@@ -8,13 +8,14 @@
             "environmentType": "Sandbox",
             "environmentName": "AlperenKaracete",
             "tenant": "a7633a5c-7897-4237-8a67-c32943537030",
-            "startupObjectId": 50160,
+            "startupObjectId": 50171,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "schemaUpdateMode": "ForceSync"
+            "schemaUpdateMode": "ForceSync",
+            
         }
     ]
 }

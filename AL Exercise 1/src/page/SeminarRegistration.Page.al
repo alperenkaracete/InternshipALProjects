@@ -295,7 +295,7 @@ page 50160 "Seminar Registration"
                 Promoted = true;
                 PromotedCategory = Process;
                 Caption = 'Print';
-                RunObject = report SeminarReport;
+                RunObject = report SeminarRegReport;
 
                 trigger OnAction()
                 begin

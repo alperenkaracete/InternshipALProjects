@@ -7,18 +7,22 @@ table 50201 "Seminar Report Selections"
         field(1; Usage; Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = "Regitration";
+            OptionMembers = "Registration";
 
         }
         field(2; Sequence; Code[10])
         {
             DataClassification = ToBeClassified;
-
+            Numeric = true;
         }
+
+
         field(3; "Report ID"; Integer)
         {
+
             DataClassification = ToBeClassified;
-            TableRelation = Object.ID WHERE("Type" = CONST("Report"));
+
+            TableRelation = AllObjWithCaption."Object ID" WHERE("Object Type" = CONST("Report"));
             trigger OnValidate()
             BEGIN
                 CALCFIELDS("Report Name");
