@@ -40,14 +40,6 @@ table 50191 "Posted Seminar Reg. Header"
         {
             Caption = 'Instructor No.';
             TableRelation = Resource WHERE(Type = CONST(Person));
-            trigger OnValidate()
-            var
-                myInt: Integer;
-            begin
-                BEGIN
-                    CALCFIELDS("Instructor Name");
-                END;
-            end;
 
         }
         field(6; "Instructor Name"; Text[100])
@@ -192,6 +184,34 @@ table 50191 "Posted Seminar Reg. Header"
             Caption = 'Source Code';
             TableRelation = "Source Code";
         }
+
+        field(51; "Shortcut Dimension 1 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            CaptionClass = '1,2,1';
+        }
+        field(52; "Shortcut Dimension 2 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            CaptionClass = '1,2,2';
+
+        }
+
+        field(480; "Dimension Set ID"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Set Entry";
+            Editable = false;
+
+            trigger OnLookup()
+            var
+                myInt: Integer;
+            begin
+                ShowDimensions;
+            end;
+        }
     }
 
     keys
@@ -207,6 +227,7 @@ table 50191 "Posted Seminar Reg. Header"
     }
 
     var
+        DimMgt: Codeunit DimensionManagement;
 
     trigger OnInsert()
     begin
@@ -227,5 +248,10 @@ table 50191 "Posted Seminar Reg. Header"
     begin
 
     end;
+
+    PROCEDURE ShowDimensions();
+    BEGIN
+        DimMgt.ShowDimensionSet("Dimension Set ID", STRSUBSTNO('%1 %2', TABLECAPTION, "No."));
+    END;
 
 }

@@ -145,6 +145,20 @@ table 50156 "Seminar"
             AutoFormatType = 1;
             CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter"), Chargeable = const(true)));
         }
+        field(28; "Global Dimension 1 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value" where("Global Dimension No." = const(1));
+            CaptionClass = '1,1,1';
+        }
+
+        field(29; "Global Dimension 2 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value" where("Global Dimension No." = const(2));
+            CaptionClass = '1,1,2';
+
+        }
 
     }
 
@@ -165,6 +179,7 @@ table 50156 "Seminar"
         GenProdPostingGroup: Record "Gen. Product Posting Group";
 
         NoSeriesMgt: Codeunit "NoSeriesManagement";
+        DimMgt: Codeunit DimensionManagement;
 
 
     trigger OnInsert()
@@ -174,6 +189,8 @@ table 50156 "Seminar"
             SeminarSetup.TESTFIELD("Seminar Nos.");
             NoSeriesMgt.InitSeries(SeminarSetup."Seminar Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         END;
+
+        DimMgt.UpdateDefaultDim(DATABASE::Seminar, "No.", "Global Dimension 1 Code", "Global Dimension 2 Code");
     end;
 
     trigger OnModify()
@@ -188,6 +205,7 @@ table 50156 "Seminar"
         CommentLine.SETRANGE("Table Name", CommentLine."Table Name"::Seminar);
         CommentLine.SETRANGE("No.", "No.");
         CommentLine.DELETEALL;
+        DimMgt.DeleteDefaultDim(DATABASE::Seminar, "No.");
     end;
 
     trigger OnRename()
@@ -209,4 +227,12 @@ table 50156 "Seminar"
         END;
     end;
 
+    local procedure ValidateShortcutDimCode("FieldNumber": Integer; var ShortcutDimCode: Code[20])
+    var
+        myInt: Integer;
+    begin
+        DimMgt.ValidateDimValueCode(FieldNumber, ShortcutDimCode);
+        DimMgt.SaveDefaultDim(DATABASE::Customer, "No.", FieldNumber, ShortcutDimCode);
+        MODIFY;
+    end;
 }
