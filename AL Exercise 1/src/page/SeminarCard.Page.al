@@ -185,6 +185,19 @@ page 50156 "Seminar Card"
                     end;
                 }
             }
+
+            action("Dimensions")
+            {
+                ApplicationArea = All;
+                RunObject = page "Default Dimensions";
+                RunPageLink = "Table ID" = const(50156), "No." = field("No.");
+                Image = Dimensions;
+
+                trigger OnAction()
+                begin
+
+                end;
+            }
         }
     }
 

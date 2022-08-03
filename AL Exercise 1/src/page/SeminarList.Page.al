@@ -145,6 +145,39 @@ page 50157 "Seminar List"
                     end;
                 }
             }
+
+            group(Dimensions)
+            {
+                action("Dimensions-Single")
+                {
+                    ApplicationArea = All;
+                    RunObject = page "Default Dimensions";
+                    RunPageLink = "Table ID" = const(50156), "No." = field("No.");
+                    Image = Dimensions;
+
+                    trigger OnAction()
+                    begin
+
+                    end;
+                }
+                action("Dimensions-Multiple")
+                {
+                    ApplicationArea = All;
+                    Image = DimensionSets;
+                    trigger OnAction()
+                    var
+                        Seminar: Record Seminar;
+
+                        DefaultDimMultiple: Page "Default Dimensions-Multiple";
+                    begin
+
+                        CurrPage.SETSELECTIONFILTER(Seminar);
+                        DefaultDimMultiple.SetMultiSeminar(Seminar);
+                        DefaultDimMultiple.RUNMODAL;
+
+                    end;
+                }
+            }
         }
     }
 
