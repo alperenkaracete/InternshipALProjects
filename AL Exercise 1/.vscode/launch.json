@@ -6,7 +6,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "AlperenKaracete",
+            "environmentName": "KARACETE",
             "tenant": "a7633a5c-7897-4237-8a67-c32943537030",
             "startupObjectId": 50166,
             "startupObjectType": "Table",
