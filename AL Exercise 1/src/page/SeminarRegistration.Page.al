@@ -302,6 +302,17 @@ page 50160 "Seminar Registration"
 
                 end;
             }
+            action(Dimensions)
+            {
+                ApplicationArea = All;
+                Image = Dimensions;
+
+                trigger OnAction()
+                begin
+                    ShowDocDim;
+                    CurrPage.SAVERECORD;
+                end;
+            }
         }
     }
 

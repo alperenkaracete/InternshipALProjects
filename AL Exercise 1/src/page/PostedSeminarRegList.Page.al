@@ -5,7 +5,9 @@ page 50179 "Posted Seminar Reg. List"
     UsageCategory = Lists;
     SourceTable = "Posted Seminar Reg. Header";
     Editable = false;
+    CardPageId = "Posted Seminar Registration";
     Caption = 'Posted Seminar Reg. List';
+
 
     layout
     {
@@ -107,6 +109,18 @@ page 50179 "Posted Seminar Reg. List"
                 Image = Costs;
                 Caption = 'Costs';
 
+            }
+            action(Dimensions)
+            {
+                ApplicationArea = All;
+                Image = Dimensions;
+                ShortcutKey = 'Shift+Ctrl+D';
+
+
+                trigger OnAction()
+                begin
+                    ShowDimensions;
+                end;
             }
         }
     }

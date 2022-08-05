@@ -132,6 +132,18 @@ page 50171 "Seminar Registration List"
 
                 end;
             }
+            action(Dimensions)
+            {
+                ApplicationArea = All;
+                Image = Dimensions;
+                ShortcutKey = 'Shift+Ctrl+D';
+
+
+                trigger OnAction()
+                begin
+                    ShowDocDim;
+                end;
+            }
         }
     }
 
