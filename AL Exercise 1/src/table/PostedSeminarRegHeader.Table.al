@@ -6,22 +6,18 @@ table 50191 "Posted Seminar Reg. Header"
     Caption = 'Posted Seminar Reg. Header';
 
 
+
     fields
     {
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
 
+
         }
         field(2; "Starting Date"; Date)
         {
             Caption = 'Starting Date';
-
-            trigger OnValidate()
-            begin
-                IF "Starting Date" <> xRec."Starting Date" THEN
-                    TESTFIELD(Status, Status::Planning);
-            end;
 
         }
         field(3; "Seminar No."; Code[20])
@@ -188,13 +184,13 @@ table 50191 "Posted Seminar Reg. Header"
         field(51; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             CaptionClass = '1,2,1';
         }
         field(52; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             CaptionClass = '1,2,2';
 
         }

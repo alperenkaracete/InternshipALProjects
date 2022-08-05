@@ -135,6 +135,16 @@ page 50185 "Seminar Ledger Entries"
                     Caption = 'Entry No.';
 
                 }
+                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
+                {
+
+                    ApplicationArea = All;
+                }
+                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
+                {
+
+                    ApplicationArea = All;
+                }
             }
 
 

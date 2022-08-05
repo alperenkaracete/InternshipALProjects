@@ -108,6 +108,18 @@ page 50187 "Posted Seminar Reg. Subform"
 
                 end;
             }
+            action(Dimensions)
+            {
+                ApplicationArea = All;
+                Image = Dimensions;
+                ShortcutKey = 'Shift+Ctrl+D';
+
+
+                trigger OnAction()
+                begin
+                    ShowDimensions;
+                end;
+            }
         }
     }
 
