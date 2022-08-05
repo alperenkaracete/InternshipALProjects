@@ -145,7 +145,7 @@ page 50173 "Posted Seminar Registration"
 
                 }
             }
-            part("Lines"; "Seminar Registration Subform")
+            part("Lines"; "Posted Seminar Reg. Subform")
             {
 
                 ApplicationArea = All;
@@ -257,9 +257,37 @@ page 50173 "Posted Seminar Registration"
 
                 end;
             }
+            action(Navigate)
+            {
+                ApplicationArea = All;
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                Caption = 'Navigate';
+
+                trigger OnAction()
+                begin
+                    Navigate.SetDoc(Rec."Posting Date", Rec."No.");
+                    Navigate.RUN;
+                end;
+            }
+            action(Dimensions)
+            {
+                ApplicationArea = All;
+                Image = Dimensions;
+                ShortcutKey = 'Shift+Ctrl+D';
+
+
+                trigger OnAction()
+                begin
+                    ShowDimensions;
+                end;
+            }
         }
     }
 
     var
         myInt: Integer;
+        Navigate: page Navigate;
+
 }
