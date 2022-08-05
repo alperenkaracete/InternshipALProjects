@@ -199,6 +199,28 @@ table 50180 "Seminar Journal Line"
             Caption = 'Posting No. Series';
 
         }
+        field(50; "Shortcut Dimension 1 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
+            CaptionClass = '1,2,1';
+
+
+        }
+        field(51; "Shortcut Dimension 2 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
+            CaptionClass = '1,2,2';
+
+
+        }
+        field(480; "Dimension Set ID"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Set Entry";
+            Editable = false;
+        }
 
     }
 

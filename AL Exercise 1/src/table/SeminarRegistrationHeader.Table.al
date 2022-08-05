@@ -316,7 +316,7 @@ table 50169 "Seminar Registration Header"
         field(50; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             trigger OnValidate()
             var
                 myInt: Integer;
@@ -327,7 +327,7 @@ table 50169 "Seminar Registration Header"
         field(51; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             trigger OnValidate()
             var
                 myInt: Integer;
@@ -511,7 +511,7 @@ table 50169 "Seminar Registration Header"
 
     end;
 
-    local procedure ShowDocDim()
+    procedure ShowDocDim()
     var
         OldDimSetID: Integer;
     begin

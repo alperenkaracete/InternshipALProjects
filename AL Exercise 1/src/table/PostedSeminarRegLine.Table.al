@@ -117,13 +117,13 @@ table 50188 "Posted Seminar Reg. Line"
         field(50; "Shortcut Dimension 1"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             CaptionClass = '1,2,1';
         }
         field(51; "Shortcut Dimension 2"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             CaptionClass = '1,2,2';
         }
         field(480; "Dimension Set ID"; Integer)
@@ -141,13 +141,14 @@ table 50188 "Posted Seminar Reg. Line"
 
     keys
     {
-        key(Key1; "Line No.", "Document No.")
+        key(Key1; "Document No.", "Line No.")
         {
             Clustered = true;
         }
     }
 
     var
+        DimMgt: Codeunit DimensionManagement;
 
     trigger OnInsert()
     begin
@@ -168,7 +169,7 @@ table 50188 "Posted Seminar Reg. Line"
 
     PROCEDURE ShowDimensions();
     var
-        DimMgt: Codeunit DimensionManagement;
+
     BEGIN
         DimMgt.ShowDimensionSet("Dimension Set ID", STRSUBSTNO('%1 %2 %3', TABLECAPTION, "Document No.", "Line No."));
     END;

@@ -52,6 +52,7 @@ table 50181 "Seminar Ledger Entry"
             DataClassification = CustomerContent;
             Caption = 'Description';
 
+
         }
         field(9; "Bill-to Customer No."; Code[20])
         {
@@ -199,8 +200,30 @@ table 50181 "Seminar Ledger Entry"
             TableRelation = User."User Name";
             Caption = 'User ID';
 
+        }
+        field(50; "Global Dimension 1 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
+            CaptionClass = '1,2,1';
+
 
         }
+        field(51; "Global Dimension 2 Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
+            CaptionClass = '1,2,2';
+
+
+        }
+        field(480; "Dimension Set ID"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Dimension Set Entry";
+            Editable = false;
+        }
+
 
     }
 
@@ -221,7 +244,7 @@ table 50181 "Seminar Ledger Entry"
     }
 
     var
-        myInt: Integer;
+        DimMgt: Codeunit DimensionManagement;
 
     trigger OnInsert()
     begin
@@ -242,5 +265,10 @@ table 50181 "Seminar Ledger Entry"
     begin
 
     end;
+
+    PROCEDURE ShowDimensions();
+    BEGIN
+        DimMgt.ShowDimensionSet("Dimension Set ID", STRSUBSTNO('%1 %2', TABLECAPTION, "Entry No."));
+    END;
 
 }

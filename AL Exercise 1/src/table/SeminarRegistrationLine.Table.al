@@ -210,7 +210,8 @@ table 50166 "Seminar Registration Line"
         field(50; "Shortcut Dimension 1 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
+            CaptionClass = '1,2,1';
 
             trigger OnValidate()
             var
@@ -222,7 +223,8 @@ table 50166 "Seminar Registration Line"
         field(51; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
+            TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
+            CaptionClass = '1,2,2';
 
             trigger OnValidate()
             var
@@ -349,7 +351,7 @@ table 50166 "Seminar Registration Line"
          "Shortcut Dimension 2 Code");
     end;
 
-    local procedure ValidateShortcutDimCode("FieldNumber": Integer; var ShortcutDimCode: Code[20])
+    procedure ValidateShortcutDimCode("FieldNumber": Integer; var ShortcutDimCode: Code[20])
     var
         myInt: Integer;
     begin
@@ -372,7 +374,7 @@ table 50166 "Seminar Registration Line"
          ShortcutDimCode);
     end;
 
-    local procedure ShowShortcutDimCode(var ShortcutDimCode: array[8] of Code[20])
+    procedure ShowShortcutDimCode(var ShortcutDimCode: array[8] of Code[20])
     var
         myInt: Integer;
     begin
