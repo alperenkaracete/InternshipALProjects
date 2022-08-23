@@ -12,44 +12,33 @@ page 50102 "Seminar Manager Role Center"
         area(RoleCenter)
         {
 
-
-            group("Control1")
+            part(Activities; "Seminar Manager Activities")
             {
 
-                part(Activities; "Seminar Manager Activities")
-                {
-
-                    ApplicationArea = All;
-                    Caption = 'Seminar Manager Activities';
-                }
-
-                systempart(Outlook; Outlook)
-                {
-
-                    ApplicationArea = All;
-
-                }
+                ApplicationArea = All;
+                Caption = 'Seminar Manager Activities';
             }
 
-            group("Control2")
+            systempart(Outlook; Outlook)
             {
-                Caption = 'Control2';
 
-                part(MySeminars; "My Seminars")
-                {
-                    ApplicationArea = All;
-                    Caption = 'My Seminars';
-                }
-                part(MyCustomers; "My Customers")
-                {
-                    ApplicationArea = All;
-                    Caption = 'My Customers';
-                }
+                ApplicationArea = All;
 
-                systempart(MyNotes; MyNotes)
-                {
-                    ApplicationArea = All;
-                }
+            }
+            part(MySeminars; "My Seminars")
+            {
+                ApplicationArea = All;
+                Caption = 'My Seminars';
+            }
+            part(MyCustomers; "My Customers")
+            {
+                ApplicationArea = All;
+                Caption = 'My Customers';
+            }
+
+            systempart(MyNotes; MyNotes)
+            {
+                ApplicationArea = All;
             }
         }
 
