@@ -5,6 +5,7 @@ report 50200 "Create Seminar Invoices"
     ProcessingOnly = true;
     RDLCLayout = 'SeminarInvoices.rdl';
     DefaultLayout = RDLC;
+    Caption = 'Create Seminar Invoices';
 
     dataset
     {
@@ -125,24 +126,32 @@ report 50200 "Create Seminar Invoices"
                     PostingDateReq)
                     {
                         ApplicationArea = All;
+                        Caption = 'PostingDateReq';
+                        ToolTip = 'Specifies the value of the PostingDateReq field.';
 
                     }
                     field(DocDateReq;
                     DocDateReq)
                     {
                         ApplicationArea = All;
+                        Caption = 'DocDateReq';
+                        ToolTip = 'Specifies the value of the DocDateReq field.';
 
                     }
                     field(CalcInvoiceDiscount;
                     CalcInvoiceDiscount)
                     {
                         ApplicationArea = All;
+                        Caption = 'CalcInvoiceDiscount';
+                        ToolTip = 'Specifies the value of the CalcInvoiceDiscount field.';
 
                     }
                     field(PostInvoices;
                     PostInvoices)
                     {
                         ApplicationArea = All;
+                        Caption = 'PostInvoices';
+                        ToolTip = 'Specifies the value of the PostInvoices field.';
 
                     }
 
@@ -162,6 +171,8 @@ report 50200 "Create Seminar Invoices"
                 action(ActionName)
                 {
                     ApplicationArea = All;
+                    Caption = 'ActionName';
+                    ToolTip = 'Executes the ActionName action.';
 
                 }
             }
@@ -213,19 +224,17 @@ report 50200 "Create Seminar Invoices"
     LOCAL PROCEDURE FinalizeSalesInvoiceHeader();
     begin
         if CalcInvoiceDiscount = true then begin
-            WITH SalesHeader DO BEGIN
-                IF CalcInvoiceDiscount THEN
-                    SalesCalcDiscount.RUN(SalesLine);
-                GET("Document Type", "No.");
-                COMMIT;
-                CLEAR(SalesCalcDiscount);
+            IF CalcInvoiceDiscount THEN
+                SalesCalcDiscount.RUN(SalesLine);
+            SalesHeader.GET(SalesHeader."Document Type", SalesHeader."No.");
+            COMMIT;
+            CLEAR(SalesCalcDiscount);
+            CLEAR(SalesPost);
+            NoOfSalesInv := NoOfSalesInv + 1;
+            IF PostInvoices THEN BEGIN
                 CLEAR(SalesPost);
-                NoOfSalesInv := NoOfSalesInv + 1;
-                IF PostInvoices THEN BEGIN
-                    CLEAR(SalesPost);
-                    IF NOT SalesPost.RUN(SalesHeader) THEN
-                        NoOfSalesInvErrors := NoOfSalesInvErrors + 1;
-                END;
+                IF NOT SalesPost.RUN(SalesHeader) THEN
+                    NoOfSalesInvErrors := NoOfSalesInvErrors + 1;
             END;
 
         END;
@@ -234,21 +243,19 @@ report 50200 "Create Seminar Invoices"
     LOCAL PROCEDURE InsertSalesInvoiceHeader();
     BEGIN
 
-        WITH SalesHeader DO BEGIN
-            INIT;
-            "Document Type" := "Document Type"::Invoice;
-            "No." := '';
-            INSERT(TRUE);
-            VALIDATE("Sell-to Customer No.", "SeminarLedgerEntry"."Bill-to Customer No.");
-            IF "Bill-to Customer No." <> "Sell-to Customer No." THEN
-                VALIDATE("Bill-to Customer No.", "SeminarLedgerEntry"."Bill-to Customer No.");
-            VALIDATE("Posting Date", PostingDateReq);
-            VALIDATE("Document Date", DocDateReq);
-            VALIDATE("Currency Code", '');
-            MODIFY;
-            COMMIT;
-            NextLineNo := 10000;
-        END;
+        SalesHeader.INIT;
+        SalesHeader."Document Type" := SalesHeader."Document Type"::Invoice;
+        SalesHeader."No." := '';
+        SalesHeader.INSERT(TRUE);
+        SalesHeader.VALIDATE("Sell-to Customer No.", "SeminarLedgerEntry"."Bill-to Customer No.");
+        IF SalesHeader."Bill-to Customer No." <> SalesHeader."Sell-to Customer No." THEN
+            SalesHeader.VALIDATE("Bill-to Customer No.", "SeminarLedgerEntry"."Bill-to Customer No.");
+        SalesHeader.VALIDATE("Posting Date", PostingDateReq);
+        SalesHeader.VALIDATE("Document Date", DocDateReq);
+        SalesHeader.VALIDATE("Currency Code", '');
+        SalesHeader.MODIFY;
+        COMMIT;
+        NextLineNo := 10000;
     END;
 
 }

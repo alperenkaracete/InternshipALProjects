@@ -1,6 +1,7 @@
 table 50201 "Seminar Report Selections"
 {
     DataClassification = ToBeClassified;
+    Caption = 'Seminar Report Selections';
 
     fields
     {
@@ -8,12 +9,14 @@ table 50201 "Seminar Report Selections"
         {
             DataClassification = ToBeClassified;
             OptionMembers = "Registration";
+            Caption = 'Usage';
 
         }
         field(2; Sequence; Code[10])
         {
             DataClassification = ToBeClassified;
             Numeric = true;
+            Caption = 'Sequence';
         }
 
 
@@ -23,6 +26,7 @@ table 50201 "Seminar Report Selections"
             DataClassification = ToBeClassified;
 
             TableRelation = AllObjWithCaption."Object ID" WHERE("Object Type" = CONST("Report"));
+            Caption = 'Report ID';
             trigger OnValidate()
             BEGIN
                 CALCFIELDS("Report Name");
@@ -30,10 +34,11 @@ table 50201 "Seminar Report Selections"
 
 
         }
-        field(4; "Report Name"; Text[80])
+        field(4; "Report Name"; Text[249])
         {
             FieldClass = FlowField;
             CalcFormula = Lookup(AllObjWithCaption."Object Caption" WHERE("Object Type" = CONST("Report"), "Object ID" = FIELD("Report ID")));
+            Caption = 'Report Name';
 
         }
     }

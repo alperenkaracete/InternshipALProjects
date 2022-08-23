@@ -117,12 +117,14 @@ table 50156 "Seminar"
         field(20; "Date Filter"; Date)
         {
             FieldClass = FlowFilter;
+            Caption = 'Date Filter';
         }
         field(21; "Charge Type Filter"; Option)
         {
             FieldClass = FlowFilter;
             OptionCaption = 'Instructor,Room,Participant,Charge';
             OptionMembers = "Instructor","Room","Participant","Charge";
+            Caption = 'Charge Type Filter';
         }
         field(25; "Total Price"; Decimal)
         {
@@ -130,6 +132,7 @@ table 50156 "Seminar"
             Editable = false;
             AutoFormatType = 1;
             CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter")));
+            Caption = 'Total Price';
         }
         field(26; "Total Price (Not Chargeable)"; Decimal)
         {
@@ -137,6 +140,7 @@ table 50156 "Seminar"
             Editable = false;
             AutoFormatType = 1;
             CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter"), Chargeable = const(false)));
+            Caption = 'Total Price (Not Chargeable)';
         }
         field(27; "Total Price (Chargeable)"; Decimal)
         {
@@ -144,12 +148,14 @@ table 50156 "Seminar"
             Editable = false;
             AutoFormatType = 1;
             CalcFormula = sum("Seminar Ledger Entry"."Total Price" where("Seminar No." = field("No."), "Posting Date" = field("Date Filter"), "Charge Type" = field("Charge Type Filter"), Chargeable = const(true)));
+            Caption = 'Total Price (Chargeable)';
         }
         field(28; "Global Dimension 1 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value" where("Global Dimension No." = const(1));
             CaptionClass = '1,1,1';
+            Caption = 'Global Dimension 1 Code';
         }
 
         field(29; "Global Dimension 2 Code"; Code[20])
@@ -157,6 +163,7 @@ table 50156 "Seminar"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value" where("Global Dimension No." = const(2));
             CaptionClass = '1,1,2';
+            Caption = 'Global Dimension 2 Code';
 
         }
 

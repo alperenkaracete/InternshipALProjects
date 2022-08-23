@@ -186,12 +186,14 @@ table 50191 "Posted Seminar Reg. Header"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             CaptionClass = '1,2,1';
+            Caption = 'Shortcut Dimension 1 Code';
         }
         field(52; "Shortcut Dimension 2 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             CaptionClass = '1,2,2';
+            Caption = 'Shortcut Dimension 2 Code';
 
         }
 
@@ -200,6 +202,7 @@ table 50191 "Posted Seminar Reg. Header"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Set Entry";
             Editable = false;
+            Caption = 'Dimension Set ID';
 
             trigger OnLookup()
             var

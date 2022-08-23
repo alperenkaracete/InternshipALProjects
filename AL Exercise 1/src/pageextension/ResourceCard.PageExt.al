@@ -11,6 +11,7 @@ pageextension 51150 "ResourceCard" extends "Resource Card"
 
                 ApplicationArea = All;
                 Caption = 'Internal-External Operations';
+                ToolTip = 'Specifies the value of the Internal-External Operations field.';
 
             }
             field("Quantity Per Day"; Rec."Quantity Per Day")
@@ -18,6 +19,7 @@ pageextension 51150 "ResourceCard" extends "Resource Card"
 
                 ApplicationArea = All;
                 Caption = 'Quantity Per Day';
+                ToolTip = 'Specifies the value of the Quantity Per Day field.';
 
             }
 
@@ -36,6 +38,7 @@ pageextension 51150 "ResourceCard" extends "Resource Card"
 
                     ApplicationArea = All;
                     Caption = 'Maximum Participants';
+                    ToolTip = 'Specifies the value of the Maximum Participants field.';
                 }
             }
         }

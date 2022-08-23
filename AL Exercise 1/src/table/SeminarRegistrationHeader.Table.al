@@ -317,6 +317,7 @@ table 50169 "Seminar Registration Header"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
+            Caption = 'Shortcut Dimension 1 Code';
             trigger OnValidate()
             var
                 myInt: Integer;
@@ -328,6 +329,7 @@ table 50169 "Seminar Registration Header"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
+            Caption = 'Shortcut Dimension 2 Code';
             trigger OnValidate()
             var
                 myInt: Integer;
@@ -340,6 +342,7 @@ table 50169 "Seminar Registration Header"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Set Entry";
+            Caption = 'Dimension Set ID';
             trigger OnLookup()
             var
                 myInt: Integer;

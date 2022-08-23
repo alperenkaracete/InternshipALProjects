@@ -17,6 +17,7 @@ page 50156 "Seminar Card"
                 {
                     ApplicationArea = All;
                     Caption = 'No.';
+                    ToolTip = 'Specifies the value of the No. field.';
 
                     trigger OnAssistEdit()
                     var
@@ -31,42 +32,49 @@ page 50156 "Seminar Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Name';
+                    ToolTip = 'Specifies the value of the Name field.';
 
                 }
                 field("Minimum Participants"; Rec."Minimum Participants")
                 {
                     ApplicationArea = All;
                     Caption = 'Minimum Participants';
+                    ToolTip = 'Specifies the value of the Minimum Participants field.';
 
                 }
                 field("Maximum Participants"; Rec."Maximum Participants")
                 {
                     ApplicationArea = All;
                     Caption = 'Maximum Participants';
+                    ToolTip = 'Specifies the value of the Maximum Participants field.';
 
                 }
                 field("Search Name"; Rec."Search Name")
                 {
                     ApplicationArea = All;
                     Caption = 'Search Name';
+                    ToolTip = 'Specifies the value of the Search Name field.';
 
                 }
                 field("Seminar Duration"; Rec."Seminar Duration")
                 {
                     ApplicationArea = All;
                     Caption = 'Seminar Duration';
+                    ToolTip = 'Specifies the value of the Seminar Duration field.';
 
                 }
                 field("Blocked"; Rec."Blocked")
                 {
                     ApplicationArea = All;
                     Caption = 'Blocked';
+                    ToolTip = 'Specifies the value of the Blocked field.';
 
                 }
                 field("Last Date Modified"; Rec."Last Date Modified")
                 {
                     ApplicationArea = All;
                     Caption = 'Last Date Modified';
+                    ToolTip = 'Specifies the value of the Last Date Modified field.';
 
                 }
 
@@ -79,16 +87,19 @@ page 50156 "Seminar Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Gen. Prod. Posting Group';
+                    ToolTip = 'Specifies the value of the Gen. Prod. Posting Group field.';
                 }
                 field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
                 {
                     ApplicationArea = All;
                     Caption = 'VAT Prod. Posting Group';
+                    ToolTip = 'Specifies the value of the VAT Prod. Posting Group field.';
                 }
                 field("Seminar Price"; Rec."Seminar Price")
                 {
                     ApplicationArea = All;
                     Caption = 'Seminar Price';
+                    ToolTip = 'Specifies the value of the Seminar Price field.';
                 }
             }
         }
@@ -106,6 +117,7 @@ page 50156 "Seminar Card"
                 RunObject = page "Comment Sheet";
                 RunPageLink = "Table Name" = const(Seminar), "No." = field("No.");
                 Caption = 'Show Comment Sheet Page';
+                ToolTip = 'Executes the Show Comment Sheet Page action.';
 
                 trigger OnAction()
                 begin
@@ -115,6 +127,7 @@ page 50156 "Seminar Card"
 
             group("Related Infromation Menu")
             {
+                Caption = 'Related Infromation Menu';
 
                 action("Statistics")
                 {
@@ -123,6 +136,8 @@ page 50156 "Seminar Card"
                     RunObject = page "Seminar Statistics";
                     Image = Statistics;
                     RunPageLink = "No." = field("No.");
+                    Caption = 'Statistics';
+                    ToolTip = 'Executes the Statistics action.';
                 }
             }
 
@@ -136,6 +151,7 @@ page 50156 "Seminar Card"
                 PromotedIsBig = true;
                 Image = NewTimesheet;
                 Caption = 'Seminar Registration';
+                ToolTip = 'Executes the Seminar Registration action.';
 
                 trigger OnAction()
                 begin
@@ -157,6 +173,7 @@ page 50156 "Seminar Card"
                     PromotedIsBig = true;
                     Image = WarrantyLedger;
                     Caption = 'Seminar Ledger Entries';
+                    ToolTip = 'Executes the Seminar Ledger Entries action.';
 
                     trigger OnAction()
                     begin
@@ -178,6 +195,7 @@ page 50156 "Seminar Card"
                     Promoted = true;
                     Image = Timesheet;
                     Caption = '&Registrations';
+                    ToolTip = 'Executes the &Registrations action.';
 
                     trigger OnAction()
                     begin
@@ -192,6 +210,8 @@ page 50156 "Seminar Card"
                 RunObject = page "Default Dimensions";
                 RunPageLink = "Table ID" = const(50156), "No." = field("No.");
                 Image = Dimensions;
+                Caption = 'Dimensions';
+                ToolTip = 'Executes the Dimensions action.';
 
                 trigger OnAction()
                 begin

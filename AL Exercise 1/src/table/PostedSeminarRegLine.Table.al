@@ -119,17 +119,20 @@ table 50188 "Posted Seminar Reg. Line"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             CaptionClass = '1,2,1';
+            Caption = 'Shortcut Dimension 1';
         }
         field(51; "Shortcut Dimension 2"; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             CaptionClass = '1,2,2';
+            Caption = 'Shortcut Dimension 2';
         }
         field(480; "Dimension Set ID"; Integer)
         {
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Set Entry";
+            Caption = 'Dimension Set ID';
             trigger OnLookup()
             var
                 myInt: Integer;

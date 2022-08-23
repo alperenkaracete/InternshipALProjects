@@ -206,6 +206,7 @@ table 50181 "Seminar Ledger Entry"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(1));
             CaptionClass = '1,2,1';
+            Caption = 'Global Dimension 1 Code';
 
 
         }
@@ -214,6 +215,7 @@ table 50181 "Seminar Ledger Entry"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value"."Code" where("Global Dimension No." = const(2));
             CaptionClass = '1,2,2';
+            Caption = 'Global Dimension 2 Code';
 
 
         }
@@ -222,6 +224,7 @@ table 50181 "Seminar Ledger Entry"
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Set Entry";
             Editable = false;
+            Caption = 'Dimension Set ID';
         }
 
 
@@ -240,6 +243,11 @@ table 50181 "Seminar Ledger Entry"
         key(Key3; "Seminar No.", "Posting Date", "Charge Type", Chargeable)
         {
             SumIndexFields = "Total Price";
+        }
+        key(Key4; "Bill-to Customer No.", "Participant Contact No.")
+        {
+
+
         }
     }
 

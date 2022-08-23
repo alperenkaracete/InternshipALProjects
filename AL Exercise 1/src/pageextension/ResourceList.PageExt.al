@@ -10,6 +10,7 @@ pageextension 50152 "ResourceList" extends "Resource List"
 
                 ApplicationArea = All;
                 Caption = 'Internal-External Operations';
+                ToolTip = 'Specifies the value of the Internal-External Operations field.';
             }
             field("Maximum Participants"; Rec."Maximum Participants")
             {
@@ -17,6 +18,7 @@ pageextension 50152 "ResourceList" extends "Resource List"
                 ApplicationArea = All;
                 Visible = showMaxParticipants;
                 Caption = 'Maximum Participants';
+                ToolTip = 'Specifies the value of the Maximum Participants field.';
             }
 
         }

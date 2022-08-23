@@ -18,12 +18,14 @@ page 50155 "Seminar Setup"
                 {
                     ApplicationArea = All;
                     Caption = 'Seminar Nos.';
+                    ToolTip = 'Specifies the value of the Seminar Nos. field.';
 
                 }
                 field("Seminar Registration Nos."; Rec."Seminar Registration Nos.")
                 {
                     ApplicationArea = All;
                     Caption = 'Seminar Registration Nos.';
+                    ToolTip = 'Specifies the value of the Seminar Registration Nos. field.';
 
 
                 }
@@ -32,6 +34,7 @@ page 50155 "Seminar Setup"
                     ApplicationArea = All;
                     Editable = true;
                     Caption = 'Posted Seminar Reg. Nos.';
+                    ToolTip = 'Specifies the value of the Posted Seminar Reg. Nos. field.';
 
 
                 }
@@ -47,6 +50,7 @@ page 50155 "Seminar Setup"
             {
                 ApplicationArea = All;
                 Caption = 'ActionName';
+                ToolTip = 'Executes the ActionName action.';
 
                 trigger OnAction()
                 begin

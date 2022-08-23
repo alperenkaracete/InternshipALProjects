@@ -21,17 +21,20 @@ page 50161 "Seminar Comment Sheet"
                 {
                     ApplicationArea = All;
                     Caption = 'Date';
+                    ToolTip = 'Specifies the value of the Date field.';
                 }
                 field(Comment; Rec."Comment")
                 {
                     ApplicationArea = all;
                     Caption = 'Comment';
+                    ToolTip = 'Specifies the value of the Comment field.';
                 }
                 field("Code"; Rec."Code")
                 {
                     Visible = false;
                     ApplicationArea = all;
                     Caption = 'Code';
+                    ToolTip = 'Specifies the value of the Code field.';
                 }
             }
         }
@@ -45,6 +48,7 @@ page 50161 "Seminar Comment Sheet"
             {
                 ApplicationArea = All;
                 Caption = 'ActionName';
+                ToolTip = 'Executes the ActionName action.';
 
                 trigger OnAction()
                 begin

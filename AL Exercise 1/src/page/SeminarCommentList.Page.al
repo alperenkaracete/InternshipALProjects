@@ -22,6 +22,7 @@ page 50162 "Seminar Comment List"
                 {
                     ApplicationArea = All;
                     Caption = 'No.';
+                    ToolTip = 'Specifies the value of the No. field.';
 
 
                 }
@@ -29,12 +30,14 @@ page 50162 "Seminar Comment List"
                 {
                     ApplicationArea = All;
                     Caption = 'Date';
+                    ToolTip = 'Specifies the value of the Date field.';
 
                 }
                 field("Comment"; Rec."Comment")
                 {
                     ApplicationArea = All;
                     Caption = 'Comment';
+                    ToolTip = 'Specifies the value of the Comment field.';
 
 
                 }
@@ -42,6 +45,7 @@ page 50162 "Seminar Comment List"
                 {
                     ApplicationArea = All;
                     Caption = 'Code';
+                    ToolTip = 'Specifies the value of the Code field.';
 
 
                 }
@@ -57,6 +61,7 @@ page 50162 "Seminar Comment List"
             {
                 ApplicationArea = All;
                 Caption = 'ActionName';
+                ToolTip = 'Executes the ActionName action.';
 
                 trigger OnAction()
                 begin

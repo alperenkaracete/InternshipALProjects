@@ -14,6 +14,7 @@ pageextension 50180 "SourceCodeSetup" extends "Source Code Setup"
 
                     ApplicationArea = All;
                     Caption = 'Seminar';
+                    ToolTip = 'Specifies the value of the Seminar field.';
                 }
             }
         }

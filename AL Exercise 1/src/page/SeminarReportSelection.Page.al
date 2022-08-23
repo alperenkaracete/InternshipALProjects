@@ -5,6 +5,7 @@ page 50205 "Seminar Report Selection"
     UsageCategory = Lists;
     SourceTable = "Seminar Report Selections";
     SaveValues = true;
+    Caption = 'Seminar Report Selection';
 
     layout
     {
@@ -12,9 +13,12 @@ page 50205 "Seminar Report Selection"
         {
             group(GroupName)
             {
+                Caption = 'GroupName';
                 field(Usage; ReportUsage2)
                 {
                     ApplicationArea = All;
+                    Caption = 'ReportUsage2';
+                    ToolTip = 'Specifies the value of the ReportUsage2 field.';
                     trigger OnValidate()
                     var
                         myInt: Integer;
@@ -28,20 +32,27 @@ page 50205 "Seminar Report Selection"
             }
             repeater(asd)
             {
-                field(Sequence; Sequence)
+                Caption = 'asd';
+                field(Sequence; Rec.Sequence)
                 {
                     ApplicationArea = All;
+                    Caption = 'Sequence';
+                    ToolTip = 'Specifies the value of the Sequence field.';
                 }
-                field("Report ID"; "Report ID")
+                field("Report ID"; Rec."Report ID")
                 {
                     ApplicationArea = All;
                     LookupPageId = 358;
+                    Caption = 'Report ID';
+                    ToolTip = 'Specifies the value of the Report ID field.';
                 }
-                field("Report Name"; "Report Name")
+                field("Report Name"; Rec."Report Name")
                 {
                     ApplicationArea = All;
                     DrillDown = false;
                     LookupPageID = 358;
+                    Caption = 'Report Name';
+                    ToolTip = 'Specifies the value of the Report Name field.';
                 }
 
             }
@@ -75,6 +86,8 @@ page 50205 "Seminar Report Selection"
             action(ActionName)
             {
                 ApplicationArea = All;
+                Caption = 'ActionName';
+                ToolTip = 'Executes the ActionName action.';
 
                 trigger OnAction()
                 begin
@@ -99,17 +112,17 @@ page 50205 "Seminar Report Selection"
     var
         myInt: Integer;
     begin
-        NewRecord;
+        Rec.NewRecord;
     end;
 
     LOCAL PROCEDURE SetUsageFilter();
     BEGIN
-        FILTERGROUP(2);
+        Rec.FILTERGROUP(2);
         CASE ReportUsage2 OF
             ReportUsage2::Registration:
-                SETRANGE(Usage, Usage::Registration);
+                Rec.SETRANGE(Usage, Rec.Usage::Registration);
         END;
-        FILTERGROUP(0);
+        Rec.FILTERGROUP(0);
     END;
 
     LOCAL PROCEDURE ReportUsage2OnAfterValidate();

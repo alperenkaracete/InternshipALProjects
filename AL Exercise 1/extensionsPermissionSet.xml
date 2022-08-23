@@ -2,6 +2,46 @@
 <PermissionSets>
   <PermissionSet RoleID="EGZERSIZ" RoleName="egzersiz">
     <Permission>
+      <ObjectID>50187</ObjectID>
+      <ObjectType>0</ObjectType>
+      <ReadPermission>1</ReadPermission>
+      <InsertPermission>1</InsertPermission>
+      <ModifyPermission>1</ModifyPermission>
+      <DeletePermission>1</DeletePermission>
+      <ExecutePermission>0</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50187</ObjectID>
+      <ObjectType>1</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50191</ObjectID>
+      <ObjectType>0</ObjectType>
+      <ReadPermission>1</ReadPermission>
+      <InsertPermission>1</InsertPermission>
+      <ModifyPermission>1</ModifyPermission>
+      <DeletePermission>1</DeletePermission>
+      <ExecutePermission>0</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50191</ObjectID>
+      <ObjectType>1</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
       <ObjectID>50188</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
@@ -142,7 +182,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50169</ObjectID>
+      <ObjectID>50166</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
       <InsertPermission>1</InsertPermission>
@@ -152,7 +192,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50169</ObjectID>
+      <ObjectID>50166</ObjectID>
       <ObjectType>1</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -162,7 +202,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50166</ObjectID>
+      <ObjectID>50201</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
       <InsertPermission>1</InsertPermission>
@@ -172,7 +212,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50166</ObjectID>
+      <ObjectID>50201</ObjectID>
       <ObjectType>1</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -202,7 +242,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50191</ObjectID>
+      <ObjectID>50169</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
       <InsertPermission>1</InsertPermission>
@@ -212,7 +252,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50191</ObjectID>
+      <ObjectID>50169</ObjectID>
       <ObjectType>1</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -222,7 +262,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50187</ObjectID>
+      <ObjectID>50101</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
       <InsertPermission>1</InsertPermission>
@@ -232,7 +272,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50187</ObjectID>
+      <ObjectID>50101</ObjectID>
       <ObjectType>1</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -242,7 +282,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50201</ObjectID>
+      <ObjectID>51000</ObjectID>
       <ObjectType>0</ObjectType>
       <ReadPermission>1</ReadPermission>
       <InsertPermission>1</InsertPermission>
@@ -252,7 +292,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50201</ObjectID>
+      <ObjectID>51000</ObjectID>
       <ObjectType>1</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -282,47 +322,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50180</ObjectID>
-      <ObjectType>5</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50181</ObjectID>
-      <ObjectType>5</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50184</ObjectID>
-      <ObjectType>5</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50188</ObjectID>
-      <ObjectType>5</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50187</ObjectID>
+      <ObjectID>50501</ObjectID>
       <ObjectType>5</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -342,8 +342,48 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50173</ObjectID>
-      <ObjectType>8</ObjectType>
+      <ObjectID>50187</ObjectID>
+      <ObjectType>5</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50188</ObjectID>
+      <ObjectType>5</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50184</ObjectID>
+      <ObjectType>5</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50181</ObjectID>
+      <ObjectType>5</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50180</ObjectID>
+      <ObjectType>5</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
       <ModifyPermission>0</ModifyPermission>
@@ -442,7 +482,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50190</ObjectID>
+      <ObjectID>50505</ObjectID>
       <ObjectType>8</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -452,27 +492,7 @@
       <SecurityFilter />
     </Permission>
     <Permission>
-      <ObjectID>50160</ObjectID>
-      <ObjectType>8</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50171</ObjectID>
-      <ObjectType>8</ObjectType>
-      <ReadPermission>0</ReadPermission>
-      <InsertPermission>0</InsertPermission>
-      <ModifyPermission>0</ModifyPermission>
-      <DeletePermission>0</DeletePermission>
-      <ExecutePermission>1</ExecutePermission>
-      <SecurityFilter />
-    </Permission>
-    <Permission>
-      <ObjectID>50170</ObjectID>
+      <ObjectID>50205</ObjectID>
       <ObjectType>8</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
@@ -494,6 +514,86 @@
     <Permission>
       <ObjectID>50200</ObjectID>
       <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50160</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50100</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50101</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50173</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50190</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50171</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50102</ObjectID>
+      <ObjectType>8</ObjectType>
+      <ReadPermission>0</ReadPermission>
+      <InsertPermission>0</InsertPermission>
+      <ModifyPermission>0</ModifyPermission>
+      <DeletePermission>0</DeletePermission>
+      <ExecutePermission>1</ExecutePermission>
+      <SecurityFilter />
+    </Permission>
+    <Permission>
+      <ObjectID>50200</ObjectID>
+      <ObjectType>3</ObjectType>
       <ReadPermission>0</ReadPermission>
       <InsertPermission>0</InsertPermission>
       <ModifyPermission>0</ModifyPermission>
