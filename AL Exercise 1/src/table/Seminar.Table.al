@@ -175,6 +175,7 @@ table 50156 "Seminar"
         {
             Clustered = true;
         }
+
     }
 
     var

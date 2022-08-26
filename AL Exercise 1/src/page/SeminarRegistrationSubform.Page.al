@@ -104,6 +104,8 @@ page 50505 "Seminar Registration Subform"
                     ApplicationArea = Dimensions;
                     ToolTip = 'Specifies the code for Shortcut Dimension 1, which is one of two global dimension codes that you set up in the General Ledger Setup window.';
                     Caption = 'Shortcut Dimension 1 Code';
+                    Visible = DimVisible1;
+
 
                 }
                 field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
@@ -111,6 +113,8 @@ page 50505 "Seminar Registration Subform"
                     ApplicationArea = Dimensions;
                     ToolTip = 'Specifies the code for Shortcut Dimension 2, which is one of two global dimension codes that you set up in the General Ledger Setup window.';
                     Caption = 'Shortcut Dimension 2 Code';
+                    Visible = DimVisible2;
+
 
                 }
                 field(ShortcutDimCode3; ShortcutDimCode[3])
@@ -122,11 +126,12 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[3]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[3] field.';
-
+                    Visible = DimVisible3;
 
                     trigger OnValidate()
                     begin
                         DimMgt.ValidateDimValueCode(3, ShortcutDimCode[3]);
+
                     end;
                 }
                 field(ShortcutDimCode4; ShortcutDimCode[4])
@@ -138,7 +143,7 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[4]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[4] field.';
-
+                    Visible = DimVisible4;
 
                     trigger OnValidate()
                     begin
@@ -154,7 +159,7 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[5]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[5] field.';
-
+                    Visible = DimVisible5;
 
                     trigger OnValidate()
                     begin
@@ -170,7 +175,7 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[6]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[6] field.';
-
+                    Visible = DimVisible6;
 
                     trigger OnValidate()
                     begin
@@ -186,7 +191,7 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[7]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[7] field.';
-
+                    Visible = DimVisible7;
 
                     trigger OnValidate()
                     begin
@@ -202,6 +207,7 @@ page 50505 "Seminar Registration Subform"
                                                                   Blocked = CONST(false));
                     Caption = 'ShortcutDimCode[8]';
                     ToolTip = 'Specifies the value of the ShortcutDimCode[8] field.';
+                    Visible = DimVisible8;
 
 
                     trigger OnValidate()
@@ -253,7 +259,52 @@ page 50505 "Seminar Registration Subform"
         CLEAR(ShortcutDimCode);
     end;
 
+    trigger OnOpenPage()
+    var
+        myInt: Integer;
+    begin
+        SetDimensionsVisibility;
+    end;
+
     var
         ShortcutDimCode: array[8] of Code[20];
+        DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8 : Boolean;
         DimMgt: Codeunit DimensionManagement;
+
+    local procedure SetDimensionsVisibility()
+    var
+    begin
+        DimVisible1 := false;
+        DimVisible2 := false;
+        DimVisible3 := false;
+        DimVisible4 := false;
+        DimVisible5 := false;
+        DimVisible6 := false;
+        DimVisible7 := false;
+        DimVisible8 := false;
+
+        UseShortcutDims(
+  DimVisible1, DimVisible2, DimVisible3, DimVisible4, DimVisible5, DimVisible6, DimVisible7, DimVisible8);
+
+        Clear(DimMgt);
+
+    end;
+
+    procedure UseShortcutDims(var DimVisible1: Boolean; var DimVisible2: Boolean; var DimVisible3: Boolean; var DimVisible4: Boolean; var DimVisible5: Boolean; var DimVisible6: Boolean; var DimVisible7: Boolean; var DimVisible8: Boolean)
+    var
+        GLSetup: Record "General Ledger Setup";
+
+    begin
+
+        GLSetup.Get();
+        DimVisible1 := GLSetup."Shortcut Dimension 1 Code" <> '';
+        DimVisible2 := GLSetup."Shortcut Dimension 2 Code" <> '';
+        DimVisible3 := GLSetup."Shortcut Dimension 3 Code" <> '';
+        DimVisible4 := GLSetup."Shortcut Dimension 4 Code" <> '';
+        DimVisible5 := GLSetup."Shortcut Dimension 5 Code" <> '';
+        DimVisible6 := GLSetup."Shortcut Dimension 6 Code" <> '';
+        DimVisible7 := GLSetup."Shortcut Dimension 7 Code" <> '';
+        DimVisible8 := GLSetup."Shortcut Dimension 8 Code" <> '';
+    end;
+
 }

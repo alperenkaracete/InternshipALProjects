@@ -13,13 +13,6 @@ page 50101 "My Seminars"
             repeater(GroupName)
             {
                 Caption = 'GroupName';
-                field("User ID"; Rec."User ID")
-                {
-                    ApplicationArea = All;
-                    Caption = 'User ID';
-                    ToolTip = 'Specifies the value of the User ID field.';
-
-                }
                 field("Seminar No."; Rec."Seminar No.")
                 {
                     ApplicationArea = All;
@@ -32,19 +25,19 @@ page 50101 "My Seminars"
                         GetSeminar;
                     end;
                 }
-                field("<Control4>"; Rec."<Control4>")
+                field("<Control4>"; Seminar."Name")
                 {
                     ApplicationArea = All;
                     Caption = 'Name';
                     ToolTip = 'Specifies the value of the Name field.';
                 }
-                field("<Control5>"; Rec."<Control5>")
+                field("<Control5>"; Seminar."Seminar Duration")
                 {
                     ApplicationArea = All;
                     Caption = 'Duration';
                     ToolTip = 'Specifies the value of the Duration field.';
                 }
-                field("<Control6>"; Rec."<Control6>")
+                field("<Control6>"; Seminar."Seminar Price")
                 {
                     ApplicationArea = All;
                     Caption = 'Price';
@@ -75,6 +68,14 @@ page 50101 "My Seminars"
         }
     }
 
+    trigger OnOpenPage()
+    var
+        myInt: Integer;
+    begin
+        SETRANGE("User ID", USERID);
+
+    end;
+
     trigger OnAfterGetRecord()
     var
         myInt: Integer;
@@ -97,7 +98,9 @@ page 50101 "My Seminars"
         myInt: Integer;
     begin
         CLEAR(Seminar);
-        IF Seminar.GET(Rec."Seminar No.") THEN;
+
+        IF Seminar.GET(Rec."Seminar No.") THEN
+            ;
     end;
 
     procedure OpenSeminarCard()

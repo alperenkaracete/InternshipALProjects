@@ -18,25 +18,6 @@ table 50101 "My Seminar"
             TableRelation = Seminar;
             Caption = 'Seminar No.';
         }
-        field(3; "<Control4>"; Code[20])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Name';
-            TableRelation = Seminar.Name;
-
-        }
-        field(4; "<Control5>"; Code[20])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Duration';
-            TableRelation = Seminar."Seminar Duration";
-        }
-        field(5; "<Control6>"; Code[20])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Price';
-            TableRelation = Seminar."Seminar Price";
-        }
     }
 
     keys
@@ -45,6 +26,7 @@ table 50101 "My Seminar"
         {
             Clustered = true;
         }
+
     }
 
     var

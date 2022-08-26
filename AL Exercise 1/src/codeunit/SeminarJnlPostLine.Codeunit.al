@@ -75,7 +75,7 @@ codeunit 50181 "Seminar Jnl.-Post Line"
         SeminarLedgerEntry.Chargeable := SeminarJnlLine.Chargeable;
         SeminarLedgerEntry."Room Resource No." := SeminarJnlLine."Room Resource No.";
         SeminarLedgerEntry."Instructor Resource No." := SeminarJnlLine."Instructor Resource No.";
-        SeminarLedgerEntry."Starting Date" := SeminarJnlLine."Starting Date";
+        SeminarLedgerEntry."Starting Date" := SeminarJnlLine."Starting Date"; 
         SeminarLedgerEntry."Seminar Registration No." := SeminarJnlLine."Seminar Registration No.";
         SeminarLedgerEntry."Res. Ledger Entry No." := SeminarJnlLine."Res. Ledger Entry No.";
         SeminarLedgerEntry."Source Type" := SeminarJnlLine."Source Type";

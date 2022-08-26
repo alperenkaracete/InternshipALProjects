@@ -7,6 +7,7 @@ table 50191 "Posted Seminar Reg. Header"
 
 
 
+
     fields
     {
         field(1; "No."; Code[20])
